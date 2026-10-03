@@ -27,26 +27,23 @@
   </style><style>
       @media (prefers-color-scheme: dark) {
         :root {
-          --header: rgb(16, 16, 16);
-          --theme: rgb(32, 32, 32);
-          --entry: rgb(48, 48, 48);
+          --header: rgb(8, 8, 8);
+          --theme: rgb(16, 16, 16);
+          --entry: rgb(32, 32, 32);
           --tone: rgb(64, 64, 64);
-          --footer: rgb(80, 80, 80);
+          --backdrop: rgba(64, 64, 64, 0.8);
           --primary: rgb(240, 240, 240);
           --secondary: rgb(224, 224, 224);
           --tertiary: rgb(208, 208, 208);
-          --backdrop: rgba(0, 0, 0, 0.8);
-          --backdrop: rgba(0, 0, 0, 0.75);
-          --accent: rgb(102, 177, 255);
-          --accent-hover: rgb(65, 143, 222);
-          --underline: underline solid currentColor var(--line);
-          --border: var(--line) solid var(--tone);
+          --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+          --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+          --angle: 315deg;
         }
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/FreeCAD-Website/css/styles.cb71b36b5732d30ca23c01d073b3e202fee816532c3843c6b985ab0d743f3dc2.css"
-          integrity="sha256-y3Gza1cy0wyiPAHQc7PiAv7oFlMsOEPGuYWrDXQ/PcI="
+          href="/FreeCAD-Website/css/styles.ba4e0c8246fe032f190f1dac870eb9b1043660e412e761656abaa036a978d511.css"
+          integrity="sha256-uk4Mgkb&#43;Ay8ZDx2shw65sQQ2YOQS52FlarqgNql41RE="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -55,12 +52,16 @@
       type="image/x-icon"
       href="/FreeCAD-Website/favicon.ico"><link
       rel="apple-touch-icon"
-      href="/FreeCAD-Website/apple-touch-icon.png"><title>FreeCAD | FreeCAD Version 1.0 Released</title>
+      href="/FreeCAD-Website/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://maxwxyz.github.io/FreeCAD-Website/ja/index.xml"
+    title="FreeCAD"><title>FreeCAD | FreeCAD Version 1.0 Released</title>
   <meta
     name="description"
     content="あなた自身の自由でオープンソースのパラメトリックモデラー"><meta
       name="keywords"
-      content="release"><link
+      content="release, 1.0"><link
     rel="canonical"
     href="https://maxwxyz.github.io/FreeCAD-Website/ja/news/freecad-version-1-0-released/"><link
       rel="alternate"
@@ -94,8 +95,9 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2024-11-19T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-05-05T08:10:07+02:00">
+    <meta property="article:modified_time" content="2026-09-23T13:25:40+02:00">
     <meta property="article:tag" content="Release">
+    <meta property="article:tag" content="1.0">
 </head><body
     class="single type-news kind-page "
     id="top">
@@ -106,19 +108,19 @@
 </div>
 <header class="site-header">
 
-  <div class="logo">
-    <a
-      href="/FreeCAD-Website/ja/"
-      accesskey="h"
-      title="ホームページ (Alt + H)"
-      aria-label="ホームページ"><svg
+  <a
+    class="logo"
+    href="/FreeCAD-Website/ja/"
+    accesskey="h"
+    title="ホームページ (Alt + H)"
+    aria-label="ホームページ">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/FreeCAD-Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/FreeCAD-Website/wordmark.svg#wordmark"></use>
     </svg></a>
-  </div>
 
   <div class="site-nav"><nav class="menu">
   <button
@@ -160,7 +162,7 @@
             href="/FreeCAD-Website/ja/docs/">ドキュメント</a>
         </li><li>
           <a
-            href="/FreeCAD-Website/ja/donate/" class="donate-button">♥ 寄付する</a>
+            href="/FreeCAD-Website/ja/donate/" class="button donate">♥ 寄付する</a>
         </li></ul>
 </nav>
 <div class="language-dropdown">
@@ -219,27 +221,22 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
   </svg><time datetime="2024-11-19T00:00:00Z">2024年11月19日</time>
-  </span><span class="meta authors"><svg
-    class="icon authors"
+  </span><span class="meta author"><svg
+    class="icon author"
     aria-hidden="true"
     focusable="false">
-    <use href="/FreeCAD-Website/svg/authors.svg#authors"></use>
-  </svg><a href="/FreeCAD-Website/ja/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg
-    class="icon categories"
+    <use href="/FreeCAD-Website/svg/author.svg#author"></use>
+  </svg><a href="/FreeCAD-Website/ja/author/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta category"><svg
+    class="icon category"
     aria-hidden="true"
     focusable="false">
-    <use href="/FreeCAD-Website/svg/categories.svg#categories"></use>
-  </svg><a href="/FreeCAD-Website/ja/categories/announcement/">Announcement (94)</a></span><span class="meta tags"><svg
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg><a href="/FreeCAD-Website/ja/category/announcement/">Announcement (94)</a></span><span class="meta tags"><svg
     class="icon tags"
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/tags.svg#tags"></use>
-  </svg><a href="/FreeCAD-Website/ja/tags/release/">Release (16)</a></span><span class="meta versions"><svg
-    class="icon versions"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/versions.svg#versions"></use>
-  </svg><a href="/FreeCAD-Website/ja/versions/1.0/">1.0 (5)</a></span><span class="meta"><svg
+  </svg><a href="/FreeCAD-Website/ja/tags/release/">Release (16)</a><a href="/FreeCAD-Website/ja/tags/1.0/">1.0 (4)</a></span><span class="meta"><svg
     class="icon time"
     aria-hidden="true"
     focusable="false">
@@ -273,7 +270,7 @@
 <p>In software development, version 1 usually means: our software is now stable and ready for &ldquo;real work&rdquo;. If you are a FreeCAD user, you know that FreeCAD has been ready for real work for years, and is used in productive, professional activity all over the world already. We in fact were tempted many times in the past to cut to the chase, and call the next version 1.0 already!</p>
 <p>But we didn&rsquo;t. Since the very beginnings, the FreeCAD community had a clear view of what 1.0 represented for us. What we wanted in it. FreeCAD matured over the years, and that list narrowed down to just two major remaining pieces: fixing the toponaming problem, and having a built-in assembly module.</p>
 <p>Well, I&rsquo;m very proud to say those two issues are now solved. Not finished, mind you, not the perfect, bug-free, faultless features we all want, but reaching that level takes time and effort. That will be our job from now on. What we have now is a solid, working, reliable toponaming solution, that is already in action in the Sketcher and PartDesign, and is being progressively extended to everything else. And we have a good and fairly complete assembly workbench that has a shiny new solver that comes, if you can believe it, from &ldquo;the other FreeCAD&rdquo;. Read the full <a
-  href="https://wiki.freecad.org/Release_notes_1.0"
+  href="https://wiki.freecad.org/Release_notes_1.0/ja"
   class="external-link" target="_blank" rel="external noreferrer nofollow">release notes<svg
     class="icon external"
     aria-hidden="true"
@@ -282,21 +279,21 @@
   </svg></a> to learn more about all this.</p>
 <p>This version 1.0 is not a finished product, simply because FreeCAD is not a product. It&rsquo;s our project, our baby, our passion, our tool. Version 1.0 is our achievement. All of us who worked on it, from the ones who helped raise the project on its feet and are not participating anymore to people who just came to help finishing translations for this release, we worked hard for this, we deserved this, and this 1.0 means: we&rsquo;ve done it.</p>
 <p>I hope you&rsquo;ll enjoy using this new version! If this is your first contact with FreeCAD, be sure to check the <a
-  href="https://wiki.freecad.org/Main_Page"
+  href="https://wiki.freecad.org/Main_Page/ja"
   class="external-link" target="_blank" rel="external noreferrer nofollow">documentation<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/external.svg#external"></use>
   </svg></a>, the <a
-  href="https://wiki.freecad.org/Manual:Introduction"
+  href="https://wiki.freecad.org/Manual:Introduction/ja"
   class="external-link" target="_blank" rel="external noreferrer nofollow">manual<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/external.svg#external"></use>
   </svg></a>, the <a
-  href="https://wiki.freecad.org/Tutorials"
+  href="https://wiki.freecad.org/Tutorials/ja"
   class="external-link" target="_blank" rel="external noreferrer nofollow">tutorials<svg
     class="icon external"
     aria-hidden="true"
@@ -304,7 +301,7 @@
     <use href="/FreeCAD-Website/svg/external.svg#external"></use>
   </svg></a> and everything the community has prepared to help you get started! ~ Yorik</p>
 <p>With the release of version 1.0 we wanted to provide an executive summary as a quicker read of the Version 1.0 release notes. The full Version 1.0 release notes are available on the <a
-  href="https://wiki.freecad.org/Release_notes_1.0"
+  href="https://wiki.freecad.org/Release_notes_1.0/ja"
   class="external-link" target="_blank" rel="external noreferrer nofollow">FreeCAD Wiki<svg
     class="icon external"
     aria-hidden="true"
@@ -405,37 +402,25 @@
             href="/FreeCAD-Website/ja/features/">特徴</a><ul></ul></li><li>
           <a
             href="/FreeCAD-Website/ja/download/">ダウンロード</a><ul><li>
+                  <a
+                    href="/FreeCAD-Website/ja/releases/">Releases</a>
+                </li><li>
                       <a
-                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development builds<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
+                        href="/FreeCAD-Website/ja/download/addons/">Addons</a>
                     </li><li>
                       <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples an parts library<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
-                      <a
-                        href="/FreeCAD-Website/ja/download/releases/">Releases</a>
+                        href="/FreeCAD-Website/ja/download/unstable/">Unstable</a>
                     </li></ul></li><li>
           <a
             href="/FreeCAD-Website/ja/news/" aria-current="page" class="active">ニュース</a><ul><li>
                   <a
                     href="/FreeCAD-Website/ja/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/FreeCAD-Website/ja/authors/">著者一覧</a>
+                        <a href="/FreeCAD-Website/ja/author/">著者</a>
                       </li><li>
-                        <a href="/FreeCAD-Website/ja/categories/">カテゴリ一覧</a>
+                        <a href="/FreeCAD-Website/ja/category/">カテゴリ</a>
                       </li><li>
                         <a href="/FreeCAD-Website/ja/tags/">タグ一覧</a>
-                      </li><li>
-                        <a href="/FreeCAD-Website/ja/versions/">バージョン一覧</a>
                       </li></ul></li><li>
           <a
             href="/FreeCAD-Website/ja/community/">コミュニティ</a><ul><li>
@@ -459,10 +444,20 @@
   </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/ja/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/ja/community/addons/">Addons</a>
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="/FreeCAD-Website/ja/community/telemetry/">Telemetry</a>
@@ -470,7 +465,7 @@
           <a
             href="/FreeCAD-Website/ja/docs/">ドキュメント</a><ul><li>
                   <a
-                    href="https://wiki.freecad.org/User_hub" target="_blank" rel="external noreferrer nofollow">User manual<svg
+                    href="https://wiki.freecad.org/User_hub/ja" target="_blank" rel="external noreferrer nofollow">User manual<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
@@ -524,6 +519,14 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/mastodon.svg#mastodon"></use>
   </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
     target="_blank" rel="external noreferrer nofollow"><svg
@@ -556,7 +559,15 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/linkedin.svg#linkedin"></use>
   </svg></a><a
-  href="/FreeCAD-Website/ja/fedishare.html#title=FreeCAD&#43;Version&#43;1.0&#43;Released&amp;description=After&#43;more&#43;than&#43;twenty&#43;years&#43;of&#43;intense&#43;and&#43;sustained&#43;development%2C&#43;the&#43;FreeCAD&#43;community&#43;is&#43;proud&#43;to&#43;announce&#43;the&#43;release&#43;of&#43;version&#43;1.0.&#43;FreeCAD&#43;1.0&#43;is&#43;now&#43;available&#43;for&#43;download&#43;on&#43;all&#43;platforms&#43;.&#43;%E2%80%A6%0A%23release&amp;url=https://maxwxyz.github.io/FreeCAD-Website/ja/news/freecad-version-1-0-released/"
+    href="https://maxwxyz.github.io/FreeCAD-Website/ja/index.xml"
+    type="application/rss&#43;xml"
+    title="RSS feed"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/rss.svg#rss"></use>
+  </svg></a><a
+  href="/FreeCAD-Website/ja/fedishare.html#title=FreeCAD&#43;Version&#43;1.0&#43;Released&amp;description=After&#43;more&#43;than&#43;twenty&#43;years&#43;of&#43;intense&#43;and&#43;sustained&#43;development%2C&#43;the&#43;FreeCAD&#43;community&#43;is&#43;proud&#43;to&#43;announce&#43;the&#43;release&#43;of&#43;version&#43;1.0.&#43;FreeCAD&#43;1.0&#43;is&#43;now&#43;available&#43;for&#43;download&#43;on&#43;all&#43;platforms&#43;.&#43;%E2%80%A6%0A%23release&#43;%231.0&amp;url=https://maxwxyz.github.io/FreeCAD-Website/ja/news/freecad-version-1-0-released/"
   title="共有 Fediverse"
   target="_blank" rel="external noreferrer nofollow"><svg
     class="icon fediverse"
@@ -598,9 +609,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-05-05
+    Modified: 2026-09-23
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/ab12b609077875783943636ca2c31feec3421a6a">ab12b60<svg
+      Commit: <a href="https://github.com/freecad/website/commit/efdfa08161fa1b81bbff5f770b0baaf19e5deffb">efdfa081<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

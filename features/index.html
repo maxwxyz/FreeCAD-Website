@@ -27,26 +27,23 @@
   </style><style>
       @media (prefers-color-scheme: dark) {
         :root {
-          --header: rgb(16, 16, 16);
-          --theme: rgb(32, 32, 32);
-          --entry: rgb(48, 48, 48);
+          --header: rgb(8, 8, 8);
+          --theme: rgb(16, 16, 16);
+          --entry: rgb(32, 32, 32);
           --tone: rgb(64, 64, 64);
-          --footer: rgb(80, 80, 80);
+          --backdrop: rgba(64, 64, 64, 0.8);
           --primary: rgb(240, 240, 240);
           --secondary: rgb(224, 224, 224);
           --tertiary: rgb(208, 208, 208);
-          --backdrop: rgba(0, 0, 0, 0.8);
-          --backdrop: rgba(0, 0, 0, 0.75);
-          --accent: rgb(102, 177, 255);
-          --accent-hover: rgb(65, 143, 222);
-          --underline: underline solid currentColor var(--line);
-          --border: var(--line) solid var(--tone);
+          --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+          --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+          --angle: 315deg;
         }
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/FreeCAD-Website/css/styles.cb71b36b5732d30ca23c01d073b3e202fee816532c3843c6b985ab0d743f3dc2.css"
-          integrity="sha256-y3Gza1cy0wyiPAHQc7PiAv7oFlMsOEPGuYWrDXQ/PcI="
+          href="/FreeCAD-Website/css/styles.ba4e0c8246fe032f190f1dac870eb9b1043660e412e761656abaa036a978d511.css"
+          integrity="sha256-uk4Mgkb&#43;Ay8ZDx2shw65sQQ2YOQS52FlarqgNql41RE="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -55,7 +52,11 @@
       type="image/x-icon"
       href="/FreeCAD-Website/favicon.ico"><link
       rel="apple-touch-icon"
-      href="/FreeCAD-Website/apple-touch-icon.png"><title>FreeCAD | Features</title>
+      href="/FreeCAD-Website/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://maxwxyz.github.io/FreeCAD-Website/index.xml"
+    title="FreeCAD"><title>FreeCAD | Features</title>
   <meta
     name="description"
     content="Powerful and open parametric design for everyone."><meta
@@ -88,7 +89,7 @@
     hreflang="x-default"
     href="https://maxwxyz.github.io/FreeCAD-Website/"><meta property="og:url" content="https://maxwxyz.github.io/FreeCAD-Website/features/">
   <meta property="og:site_name" content="FreeCAD">
-  <meta property="og:title" content="Innovate Without Limits">
+  <meta property="og:title" content="Innovate without limits">
   <meta property="og:description" content="Powerful and open parametric design for everyone.">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="website">
@@ -102,19 +103,19 @@
 </div>
 <header class="site-header">
 
-  <div class="logo">
-    <a
-      href="/FreeCAD-Website/"
-      accesskey="h"
-      title="Homepage (Alt + H)"
-      aria-label="Homepage"><svg
+  <a
+    class="logo"
+    href="/FreeCAD-Website/"
+    accesskey="h"
+    title="Homepage (Alt + H)"
+    aria-label="Homepage">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/FreeCAD-Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/FreeCAD-Website/wordmark.svg#wordmark"></use>
     </svg></a>
-  </div>
 
   <div class="site-nav"><nav class="menu">
   <button
@@ -156,7 +157,7 @@
             href="/FreeCAD-Website/docs/">Documentation</a>
         </li><li>
           <a
-            href="/FreeCAD-Website/donate/" class="donate-button">♥︎ Donate</a>
+            href="/FreeCAD-Website/donate/" class="button donate">♥︎ Donate</a>
         </li></ul>
 </nav>
 <div class="language-dropdown">
@@ -207,11 +208,17 @@
     <use href="/FreeCAD-Website/svg/light.svg#light"></use>
   </svg></button>
 </div></div>
-</header><main style="--hue: 20;"><section class="hero">
+</header><main style="--hue: 10;"><section class="hero">
 
-    <h1 class="title">Innovate Without Limits</h1><h3 class="description">Powerful and open parametric design for everyone.</h3></section>
+    <h1 class="title">Innovate without limits</h1><h3 class="description">Powerful and open parametric design for everyone.</h3></section>
 
-  <div class="content"><div class="block-shortcode wide grid"><h2 class="block-title accent">Made to build for the real world</h2><div class="block-content"><div class="group"><p>FreeCAD is made primarily to design objects for the real world. FreeCAD uses real-world units, from microns to kilometers, inches or feet, offers tools to produce, edit, and export solid precise models for 3D printing, CNC machining, 2D drawings, perform Finite Element Analyses, data and quantities for Bills of Materials.</p>
+  <div class="content"><div class="block-shortcode wide pastel1"><h2 class="block-title">Made to build for the real world</h2><div class="block-content"><div class="group"><div class="marker"><span><svg
+    class="icon gear"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/gear.svg#gear"></use>
+  </svg></span><span>01</span></div>
+<p>FreeCAD is made primarily to design objects for the real world. FreeCAD uses real-world units, from microns to kilometers, inches or feet, offers tools to produce, edit, and export solid precise models for 3D printing, CNC machining, 2D drawings, Building Information Modeling, perform Finite Element Analyses, extract data for Bills of Materials and manufacturing, and much much more.</p>
 <div class="button-shortcode">
     <a
       href="https://wiki.freecad.org/Workbenches"
@@ -261,7 +268,7 @@
     <use href="/FreeCAD-Website/svg/cross.svg#cross"></use>
   </svg></button><p>Assembly</p></div><figcaption>Assembly</figcaption></figure></div>
   </div>
-<div class="block-shortcode wide pastel4"><h2 class="block-title">A powerful solid-based geometry kernel</h2><div class="block-content"><figure class="image"><button
+<div class="block-shortcode wide pastel2"><h2 class="block-title">A robust solid-based geometry kernel</h2><div class="block-content"><figure class="image"><button
           aria-label="Zoom image"
           popovertarget="img-002"
           popovertargetaction="show"><svg
@@ -292,7 +299,13 @@
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/cross.svg#cross"></use>
-  </svg></button><p>Pressure vessels, piping and skids</p></div><figcaption>Pressure vessels, piping and skids</figcaption></figure><div class="group"><p>FreeCAD features an advanced geometry engine based on Open CASCADE Technology. It supports solids, Boundary Representation (BRep) objects, Non-Uniform Rational Basis Spline (NURBS) curves and surfaces, and offers a wide range of tools to create and modify them via complex Boolean operations, fillets, shape cleaning and much more.</p>
+  </svg></button><p>Pressure vessels, piping and skids</p></div><figcaption>Pressure vessels, piping and skids</figcaption></figure><div class="group"><div class="marker"><span><svg
+    class="icon packages"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/packages.svg#packages"></use>
+  </svg></span><span>02</span></div>
+<p>FreeCAD features an advanced geometry engine based on Open CASCADE Technology. It supports solids, Boundary Representation (BRep) objects, Non-Uniform Rational Basis Spline (NURBS) curves and surfaces, and offers a wide range of tools to create and modify them via complex Boolean operations, fillets, shape cleaning and much more.</p>
 <div class="button-shortcode">
     <a
       href="https://en.wikipedia.org/wiki/Boundary_representation"
@@ -310,16 +323,22 @@
   </svg></a>
   </div></div></div>
   </div>
-<div class="block-shortcode wide dots"><h2 class="block-title">A wi(l)dly parametric environment</h2><div class="block-content"><div class="group"><p>All FreeCAD objects are natively parametric, meaning their shape can be based on properties such as numeric values, texts, many data types, or even other objects allowing complex custom parametric behavior. All shape changes are recalculated on demand, recorded by an undo/redo stack, and allow to maintain a precise modelling history. New parametric objects are easy to code thanks to Python code that allows to perform just about anything in FreeCAD, from simple one-line commands in the integrated Python console to recording macros, developing custom tools up to fully featured workbenches.</p>
+<div class="block-shortcode wide pastel3"><h2 class="block-title">A wi(l)dly parametric environment</h2><div class="block-content"><div class="group"><div class="marker"><span><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg></span><span>03</span></div>
+<p>All FreeCAD objects are natively parametric, meaning their shape can be based on properties such as numeric values, texts, many data types, or even other objects allowing complex custom parametric behavior. All shape changes are recalculated on demand, recorded by an undo/redo stack, and allow to maintain a precise modelling history. New parametric objects are easy to code thanks to Python code that allows to perform just about anything in FreeCAD, from simple one-line commands in the integrated Python console to recording macros, developing custom tools up to fully featured workbenches.</p>
 <div class="button-shortcode">
     <a
       href="https://wiki.freecad.org/Property"
       title="Properties everywhere!"
       class="button" target="_blank" rel="external noreferrer nofollow"><svg
-    class="icon categories"
+    class="icon category"
     aria-hidden="true"
     focusable="false">
-    <use href="/FreeCAD-Website/svg/categories.svg#categories"></use>
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
   </svg>Properties everywhere!<svg
     class="icon external"
     aria-hidden="true"
@@ -360,7 +379,13 @@
     <use href="/FreeCAD-Website/svg/cross.svg#cross"></use>
   </svg></button><p>Sketcher</p></div><figcaption>Sketcher</figcaption></figure></div>
   </div>
-<div class="block-shortcode wide pastel5"><h2 class="block-title">File formats frenzy</h2><div class="block-content"><div class="group"><p>FreeCAD allows to import and export models and data to dozens of different file formats such as STEP, IGES, OBJ, STL, DXF, SVG, SHP, DAE, IFC or OFF, NASTRAN, VRML, OpenSCAD CSG and many more, in addition to FreeCAD&rsquo;s native FCStd file format. Addon workbenches can also add more file formats.</p>
+<div class="block-shortcode wide pastel6"><h2 class="block-title">File formats frenzy</h2><div class="block-content"><div class="group"><div class="marker"><span><svg
+    class="icon file"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/file.svg#file"></use>
+  </svg></span><span>04</span></div>
+<p>FreeCAD allows to import and export models and data to dozens of different file formats such as STEP, IGES, OBJ, STL, DXF, SVG, SHP, DAE, IFC or OFF, NASTRAN, VRML, OpenSCAD CSG and many more, in addition to FreeCAD&rsquo;s native FCStd file format. Addon workbenches can also add more file formats.</p>
 <div class="button-shortcode">
     <a
       href="https://wiki.freecad.org/Category:File_Formats"
@@ -378,7 +403,7 @@
   </svg></a>
   </div></div></div>
   </div>
-<div class="block-shortcode wide section"><h2 class="block-title">A large multi-specialty ecosystem</h2><div class="block-content"><figure class="image"><button
+<div class="block-shortcode wide pastel4"><h2 class="block-title">A large multi-specialty ecosystem</h2><div class="block-content"><figure class="image"><button
           aria-label="Zoom image"
           popovertarget="img-004"
           popovertargetaction="show"><svg
@@ -409,10 +434,16 @@
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/cross.svg#cross"></use>
-  </svg></button><p>Building Information Modeling</p></div><figcaption>Building Information Modeling</figcaption></figure><div class="group"><p>FreeCAD offers dedicated workbenches for a variety of purposes such as CSG modeling, simple 2D CAD drafting, NURBS surfaces, architectural BIM modeling, 3D printing, CAM and CNC, point clouds, working with OpenSCAD files, designing industrial robot trajectories, doing Finite Element Analyses, and much more. FreeCAD also provides easy tools to install and manage Addon workbenches and macros developed by the users community.</p>
+  </svg></button><p>Building Information Modeling</p></div><figcaption>Building Information Modeling</figcaption></figure><div class="group"><div class="marker"><span><svg
+    class="icon puzzle"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/puzzle.svg#puzzle"></use>
+  </svg></span><span>05</span></div>
+<p>FreeCAD offers dedicated workbenches for a variety of purposes such as CSG modeling, simple 2D CAD drafting, NURBS surfaces, architectural BIM modeling, 3D printing, CAM and CNC, point clouds, working with OpenSCAD files, designing industrial robot trajectories, doing Finite Element Analyses, and much more. FreeCAD also provides easy tools to install and manage Addon workbenches and macros developed by the users community.</p>
 <div class="button-shortcode">
     <a
-      href="/FreeCAD-Website/community/addons/"
+      href="/FreeCAD-Website/download/addons/"
       title="External modules"
       class="button"><svg
     class="icon puzzle"
@@ -422,7 +453,7 @@
   </svg>External modules</a>
   </div></div></div>
   </div>
-<div class="block-shortcode wide pastel6"><h2 class="block-title">A Community heart</h2><div class="block-content"><div class="group"><div class="button-shortcode">
+<div class="block-shortcode wide pastel5"><h2 class="block-title">A Community heart</h2><div class="block-content"><div class="group"><div class="button-shortcode">
     <a
       href="/FreeCAD-Website/community/"
       title="Join today"
@@ -434,9 +465,17 @@
   </svg>Join today</a>
   </div>
 <p>FreeCAD is made for everybody, by everybody. Developed and maintained by a community of developers, users, professionals, hobbyists, translators, all united to improve and have fun with FreeCAD. No commercial driven decisions, no urge to upgrade or lock into a specific workflow or ecosystem. FreeCAD and the files and data produced are yours truly, forever!</p>
-</div></div>
+</div>
+<div class="card-shortcode"><a
+  class="card"
+  href="/FreeCAD-Website/community/"><div class="card-color" style="--hue: 50;"><span class="card-icon"><svg
+    class="icon people"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/people.svg#people"></use>
+  </svg></span></div><h3 class="card-title">Community</h3><p class="card-description">Get in touch with the FreeCAD community around the world.</p><div class="card-metadata"></div></a></div></div>
   </div>
-<div class="block-shortcode wide"><h2 class="block-title">Share your passion with the world</h2><div class="block-content"><div
+<div class="block-shortcode wide dots"><h2 class="block-title">Share your passion with the world</h2><div class="block-content"><div
     id="carousel0"
     class="carousel"
     data-duration="5000"
@@ -497,17 +536,7 @@
   </svg></div>
   </div></div>
   </div>
-</div><footer class="single-footer">
-    <nav class="pagination"><a
-            class="button prev"
-            href="/FreeCAD-Website/download/"
-            title="Prev ">Download<svg
-    class="icon tri_right"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/tri_right.svg#tri_right"></use>
-  </svg></a></nav>
-  </footer></main><footer class="site-footer"><a id="top-link"
+</div></main><footer class="site-footer"><a id="top-link"
   href="#top"
   accesskey="g"
   aria-label="Go to Top"
@@ -524,37 +553,25 @@
             href="/FreeCAD-Website/features/" aria-current="page" class="active">Features</a><ul></ul></li><li>
           <a
             href="/FreeCAD-Website/download/">Download</a><ul><li>
+                  <a
+                    href="/FreeCAD-Website/releases/">Releases</a>
+                </li><li>
                       <a
-                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development builds<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
+                        href="/FreeCAD-Website/download/addons/">Addons</a>
                     </li><li>
                       <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples an parts library<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
-                      <a
-                        href="/FreeCAD-Website/download/releases/">Releases</a>
+                        href="/FreeCAD-Website/download/unstable/">Unstable</a>
                     </li></ul></li><li>
           <a
             href="/FreeCAD-Website/news/">News</a><ul><li>
                   <a
                     href="/FreeCAD-Website/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/FreeCAD-Website/authors/">Authors</a>
+                        <a href="/FreeCAD-Website/author/">Author</a>
                       </li><li>
-                        <a href="/FreeCAD-Website/categories/">Categories</a>
+                        <a href="/FreeCAD-Website/category/">Category</a>
                       </li><li>
                         <a href="/FreeCAD-Website/tags/">Tags</a>
-                      </li><li>
-                        <a href="/FreeCAD-Website/versions/">Versions</a>
                       </li></ul></li><li>
           <a
             href="/FreeCAD-Website/community/">Community</a><ul><li>
@@ -578,10 +595,20 @@
   </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/community/addons/">Addons</a>
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="/FreeCAD-Website/community/telemetry/">Telemetry</a>
@@ -643,6 +670,14 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/mastodon.svg#mastodon"></use>
   </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
     target="_blank" rel="external noreferrer nofollow"><svg
@@ -675,7 +710,15 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/linkedin.svg#linkedin"></use>
   </svg></a><a
-  href="/FreeCAD-Website/fedishare.html#title=Innovate&#43;Without&#43;Limits&amp;description=Powerful%20and%20open%20parametric%20design%20for%20everyone.&amp;url=https://maxwxyz.github.io/FreeCAD-Website/features/"
+    href="https://maxwxyz.github.io/FreeCAD-Website/index.xml"
+    type="application/rss&#43;xml"
+    title="RSS feed"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/rss.svg#rss"></use>
+  </svg></a><a
+  href="/FreeCAD-Website/fedishare.html#title=Innovate&#43;without&#43;limits&amp;description=Powerful%20and%20open%20parametric%20design%20for%20everyone.&amp;url=https://maxwxyz.github.io/FreeCAD-Website/features/"
   title="Share on Fediverse"
   target="_blank" rel="external noreferrer nofollow"><svg
     class="icon fediverse"
@@ -717,9 +760,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-06-26
+    Modified: 2026-09-23
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/f7747eb3974afdad15458e218a931f99df0e201f">f7747eb<svg
+      Commit: <a href="https://github.com/freecad/website/commit/efdfa08161fa1b81bbff5f770b0baaf19e5deffb">efdfa081<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

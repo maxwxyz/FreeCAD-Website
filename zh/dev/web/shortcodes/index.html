@@ -27,26 +27,23 @@
   </style><style>
       @media (prefers-color-scheme: dark) {
         :root {
-          --header: rgb(16, 16, 16);
-          --theme: rgb(32, 32, 32);
-          --entry: rgb(48, 48, 48);
+          --header: rgb(8, 8, 8);
+          --theme: rgb(16, 16, 16);
+          --entry: rgb(32, 32, 32);
           --tone: rgb(64, 64, 64);
-          --footer: rgb(80, 80, 80);
+          --backdrop: rgba(64, 64, 64, 0.8);
           --primary: rgb(240, 240, 240);
           --secondary: rgb(224, 224, 224);
           --tertiary: rgb(208, 208, 208);
-          --backdrop: rgba(0, 0, 0, 0.8);
-          --backdrop: rgba(0, 0, 0, 0.75);
-          --accent: rgb(102, 177, 255);
-          --accent-hover: rgb(65, 143, 222);
-          --underline: underline solid currentColor var(--line);
-          --border: var(--line) solid var(--tone);
+          --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+          --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+          --angle: 315deg;
         }
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/FreeCAD-Website/css/styles.cb71b36b5732d30ca23c01d073b3e202fee816532c3843c6b985ab0d743f3dc2.css"
-          integrity="sha256-y3Gza1cy0wyiPAHQc7PiAv7oFlMsOEPGuYWrDXQ/PcI="
+          href="/FreeCAD-Website/css/styles.ba4e0c8246fe032f190f1dac870eb9b1043660e412e761656abaa036a978d511.css"
+          integrity="sha256-uk4Mgkb&#43;Ay8ZDx2shw65sQQ2YOQS52FlarqgNql41RE="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -55,7 +52,11 @@
       type="image/x-icon"
       href="/FreeCAD-Website/favicon.ico"><link
       rel="apple-touch-icon"
-      href="/FreeCAD-Website/apple-touch-icon.png"><title>FreeCAD | Shortcodes</title>
+      href="/FreeCAD-Website/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://maxwxyz.github.io/FreeCAD-Website/zh/index.xml"
+    title="FreeCAD"><title>FreeCAD | Shortcodes</title>
   <meta
     name="description"
     content="Bundled Trigo Theme and Hugo shortcodes to enhance content."><meta
@@ -93,7 +94,7 @@
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-06-27T13:19:47+02:00">
+    <meta property="article:modified_time" content="2026-09-24T11:09:56+02:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -104,19 +105,19 @@
 </div>
 <header class="site-header">
 
-  <div class="logo">
-    <a
-      href="/FreeCAD-Website/zh/"
-      accesskey="h"
-      title="主页 (Alt + H)"
-      aria-label="主页"><svg
+  <a
+    class="logo"
+    href="/FreeCAD-Website/zh/"
+    accesskey="h"
+    title="主页 (Alt + H)"
+    aria-label="主页">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/FreeCAD-Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/FreeCAD-Website/wordmark.svg#wordmark"></use>
     </svg></a>
-  </div>
 
   <div class="site-nav"><nav class="menu">
   <button
@@ -158,7 +159,7 @@
             href="/FreeCAD-Website/zh/docs/" aria-current="page" class="active">文档</a>
         </li><li>
           <a
-            href="/FreeCAD-Website/zh/donate/" class="donate-button">♥ 赞助</a>
+            href="/FreeCAD-Website/zh/donate/" class="button donate">♥ 赞助</a>
         </li></ul>
 </nav>
 <div class="language-dropdown">
@@ -216,7 +217,7 @@
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/time.svg#time"></use>
-  </svg>9 分钟</span></div></section><nav class="toc">
+  </svg>10 分钟</span></div></section><nav class="toc">
   <input
     type="checkbox"
     id="toc-checkbox"
@@ -307,12 +308,14 @@
         <li><a href="#compare">Compare</a></li>
         <li><a href="#canvas">Canvas</a></li>
         <li><a href="#button">Button</a></li>
+        <li><a href="#marker">Marker</a></li>
         <li><a href="#git">Git</a></li>
         <li><a href="#pdf">PDF</a></li>
         <li><a href="#video">Video</a></li>
         <li><a href="#peertube">Peertube</a></li>
         <li><a href="#youtube">YouTube</a></li>
         <li><a href="#vimeo">Vimeo</a></li>
+        <li><a href="#card">Card</a></li>
         <li><a href="#collection">Collection</a></li>
         <li><a href="#block-and-group">Block and group</a></li>
       </ul>
@@ -396,13 +399,19 @@ Most shortcodes support both named and positional arguments.</p>
 </span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">details</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
 <details open>
 
-    <summary>Details</summary><p>This is the content of the details.</p>
+    <summary>Details</summary>
+
+    <div><p>This is the content of the details.</p>
 <p>Markdown is <strong>supported</strong>.</p>
-</details>
+</div>
+  </details>
 <details>
 
-    <summary>Click me to reveal</summary><p>This will be hidden by default.</p>
-</details>
+    <summary>Click me to reveal</summary>
+
+    <div><p>This will be hidden by default.</p>
+</div>
+  </details>
 <p><u><code>details</code> arguments:</u></p>
 <table>
   <thead>
@@ -458,7 +467,7 @@ Most shortcodes support both named and positional arguments.</p>
       </tr>
       <tr>
           <td>5</td>
-          <td>class</td>
+          <td>css_class</td>
           <td>string</td>
           <td><em>optional</em></td>
           <td></td>
@@ -785,7 +794,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
       </tr>
       <tr>
           <td>1</td>
-          <td>class</td>
+          <td>css_class</td>
           <td>string</td>
           <td><em>optional</em></td>
           <td>custom CSS classes</td>
@@ -812,7 +821,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
           <td>string</td>
           <td><em>optional</em></td>
           <td></td>
-          <td>&ldquo;label&rdquo;</td>
+          <td>&ldquo;Branch label&rdquo;</td>
       </tr>
       <tr>
           <td>1</td>
@@ -832,7 +841,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
       </tr>
       <tr>
           <td>3</td>
-          <td>class</td>
+          <td>css_class</td>
           <td>string</td>
           <td><em>optional</em></td>
           <td>custom CSS classes</td>
@@ -859,7 +868,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
           <td>string</td>
           <td><em>optional</em></td>
           <td></td>
-          <td>&ldquo;label&rdquo;</td>
+          <td>&ldquo;Leaf label&rdquo;</td>
       </tr>
       <tr>
           <td>1</td>
@@ -871,7 +880,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
       </tr>
       <tr>
           <td>2</td>
-          <td>class</td>
+          <td>css_class</td>
           <td>string</td>
           <td><em>optional</em></td>
           <td>custom CSS classes</td>
@@ -1115,8 +1124,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
 <p><u>How it renders:</u></p>
 <div
   class="canvas"
-  id="canvas-7"
-  tabindex="0" title="Press spacebar to animate me! Or grab, scroll and use keyboard arrows too!">
+  id="canvas-7" title="Press spacebar to animate me! Or grab, scroll and use keyboard arrows too!">
 
   <canvas aria-label="Canvas animation">
     <img
@@ -1227,17 +1235,17 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/words.svg#words"></use>
-  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">button</span><span class="w"> </span><span class="nx">url</span><span class="o">=</span><span class="s">&#34;/news&#34;</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;See the latest news&#34;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s">&#34;time&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">button</span><span class="w"> </span><span class="nx">url</span><span class="o">=</span><span class="s">&#34;/news&#34;</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;Button label&#34;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s">&#34;time&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
 <div class="button-shortcode">
     <a
       href="/FreeCAD-Website/zh/news/"
-      title="See the latest news"
+      title="Button label"
       class="button"><svg
     class="icon time"
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/time.svg#time"></use>
-  </svg>See the latest news</a>
+  </svg>Button label</a>
   </div>
 <p><u><code>button</code> arguments:</u></p>
 <table>
@@ -1278,11 +1286,72 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
       </tr>
       <tr>
           <td>3</td>
-          <td>class</td>
+          <td>css_class</td>
           <td>string</td>
           <td><em>optional</em></td>
           <td>custom CSS classes</td>
           <td>&ldquo;button-accent&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<h2
+  id="marker">Marker<a class="heading-anchor"
+     href="#marker"
+     title="Marker"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Trigo shortcode to add a marker with optional icon and label.</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">marker</span><span class="w"> </span><span class="nx">label</span><span class="o">=</span><span class="s">&#34;Marker label&#34;</span><span class="w"> </span><span class="nx">icon</span><span class="o">=</span><span class="s">&#34;heart&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+<div class="marker"><span><svg
+    class="icon heart"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/heart.svg#heart"></use>
+  </svg></span><span>Marker label</span></div>
+<p><u><code>button</code> arguments:</u></p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Options</th>
+          <th>Example value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>label</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;Marker label&rdquo;</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>icon</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td></td>
+          <td>&ldquo;heart&rdquo;</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>css_class</td>
+          <td>string</td>
+          <td><em>optional</em></td>
+          <td>custom CSS classes</td>
+          <td>&ldquo;accent&rdquo;</td>
       </tr>
   </tbody>
 </table>
@@ -1646,6 +1715,48 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     <use href="/FreeCAD-Website/svg/external.svg#external"></use>
   </svg></a>.</p>
 <h2
+  id="card">Card<a class="heading-anchor"
+     href="#card"
+     title="Card"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><p>Trigo shortcode to display an internal page card.</p>
+<div class="codeblock"><div class="codeblock-file"><svg
+    class="icon words"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/words.svg#words"></use>
+  </svg>markdown</div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go-html-template" data-lang="go-html-template"><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="nx">card</span><span class="w"> </span><span class="nx">url</span><span class="o">=</span><span class="s">&#34;thanks&#34;</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
+<div class="card-shortcode"><a
+  class="card"
+  href="/FreeCAD-Website/zh/thanks/"><div class="card-color" style="--hue: 160;"></div><h3 class="card-title">Thank you!</h3><p class="card-description">Thanks for using and supporting FreeCAD!</p><div class="card-metadata"></div></a></div>
+<p><u><code>card</code> arguments:</u></p>
+<table>
+  <thead>
+      <tr>
+          <th>Position</th>
+          <th>Argument</th>
+          <th>Type</th>
+          <th>Default</th>
+          <th>Options</th>
+          <th>Example value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>url</td>
+          <td>string</td>
+          <td></td>
+          <td></td>
+          <td>&ldquo;thanks&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<h2
   id="collection">Collection<a class="heading-anchor"
      href="#collection"
      title="Collection"><svg
@@ -1670,24 +1781,21 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/directions.svg#directions"></use>
-  </svg></span></div><h3 class="card-title">Contributors, welcome!</h3><p class="card-description">Want to contribute to FreeCAD? Start here.</p><div class="card-metadata"></div>
-</a><a
+  </svg></span></div><h3 class="card-title">Contributors, welcome!</h3><p class="card-description">Want to contribute to FreeCAD? Start here.</p><div class="card-metadata"></div></a><a
   class="card"
   href="/FreeCAD-Website/zh/dev/teams/"><div class="card-color" style="--hue: 100;"><span class="card-icon"><svg
-    class="icon people"
+    class="icon teams"
     aria-hidden="true"
     focusable="false">
-    <use href="/FreeCAD-Website/svg/people.svg#people"></use>
-  </svg></span></div><h3 class="card-title">Teams</h3><p class="card-description">The Teams of contributors making FreeCAD happen.</p><div class="card-metadata"></div>
-</a><a
+    <use href="/FreeCAD-Website/svg/teams.svg#teams"></use>
+  </svg></span></div><h3 class="card-title">Teams</h3><p class="card-description">The Teams of contributors making FreeCAD happen.</p><div class="card-metadata"></div></a><a
   class="card"
   href="/FreeCAD-Website/zh/dev/setup/build/"><div class="card-color" style="--hue: 110;"><span class="card-icon"><svg
     class="icon gear"
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/gear.svg#gear"></use>
-  </svg></span></div><h3 class="card-title">Development Setup</h3><p class="card-description">Set the development up, build, run, enjoy!</p><div class="card-metadata"></div>
-</a></div>
+  </svg></span></div><h3 class="card-title">Development Setup</h3><p class="card-description">Set the development up, build, run, enjoy!</p><div class="card-metadata"></div></a></div>
   </div>
 <p><u><code>collection</code> arguments:</u></p>
 <table>
@@ -1724,7 +1832,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
           <td>string</td>
           <td><em>optional</em></td>
           <td></td>
-          <td>&ldquo;categories&rdquo;</td>
+          <td>&ldquo;category&rdquo;</td>
       </tr>
       <tr>
           <td>3</td>
@@ -1752,7 +1860,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
       </tr>
       <tr>
           <td>6</td>
-          <td>class</td>
+          <td>css_class</td>
           <td>string</td>
           <td><em>optional</em></td>
           <td>custom CSS classes</td>
@@ -1801,7 +1909,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="nx">group</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">![](/FreeCAD-symbol.webp)
+</span></span><span class="line"><span class="cl">![](symbol.svg)
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="cp">{{</span><span class="err">&lt;</span><span class="w"> </span><span class="err">/</span><span class="k">block</span><span class="w"> </span><span class="err">&gt;</span><span class="cp">}}</span></span></span></code></pre></div></div><p><u>How it renders:</u></p>
 <div class="block-shortcode wide section"><h2 class="block-title">My Title</h2><div class="block-content"><div class="group"><p>This is <strong>Markdown</strong> <em>content</em> between <code>block</code> and <code>group</code> shortcode tags.</p>
@@ -1886,25 +1994,23 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/zoom.svg#zoom"></use>
-  </svg><img
-    class="img FreeCAD-symbol"
-    src="/FreeCAD-Website/FreeCAD-symbol.webp"
-    alt="图片备用图"
-    loading="lazy"
-    fetchpriority="low"
-    decoding="async" width="400" height="480" srcset="/FreeCAD-Website/FreeCAD-symbol.webp 400w" sizes="95vw"></button>
+  </svg><svg
+    class="svg symbol"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/symbol.svg#symbol"></use>
+  </svg></button>
         <div id="img-001" popover>
           <button
             class="enlarged"
             popovertarget="img-001"
             popovertargetaction="hide"
-            aria-label="关闭图片查看器"><img
-    class="img FreeCAD-symbol"
-    src="/FreeCAD-Website/FreeCAD-symbol.webp"
-    alt="图片备用图"
-    loading="lazy"
-    fetchpriority="low"
-    decoding="async" width="400" height="480" srcset="/FreeCAD-Website/FreeCAD-symbol.webp 400w" sizes="95vw"><svg
+            aria-label="关闭图片查看器"><svg
+    class="svg symbol"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/symbol.svg#symbol"></use>
+  </svg><svg
     class="icon cross"
     aria-hidden="true"
     focusable="false">
@@ -1942,7 +2048,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
       </tr>
       <tr>
           <td>2</td>
-          <td>class</td>
+          <td>css_class</td>
           <td>string</td>
           <td><em>optional</em></td>
           <td>custom CSS classes</td>
@@ -1989,7 +2095,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
       </tr>
       <tr>
           <td>1</td>
-          <td>class</td>
+          <td>css_class</td>
           <td>string</td>
           <td><em>optional</em></td>
           <td>custom CSS classes</td>
@@ -2032,37 +2138,25 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
             href="/FreeCAD-Website/zh/features/">功能</a><ul></ul></li><li>
           <a
             href="/FreeCAD-Website/zh/download/">下载</a><ul><li>
+                  <a
+                    href="/FreeCAD-Website/zh/releases/">Releases</a>
+                </li><li>
                       <a
-                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development builds<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
+                        href="/FreeCAD-Website/zh/download/addons/">Addons</a>
                     </li><li>
                       <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples an parts library<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
-                      <a
-                        href="/FreeCAD-Website/zh/download/releases/">Releases</a>
+                        href="/FreeCAD-Website/zh/download/unstable/">Unstable</a>
                     </li></ul></li><li>
           <a
             href="/FreeCAD-Website/zh/news/">新闻</a><ul><li>
                   <a
                     href="/FreeCAD-Website/zh/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/FreeCAD-Website/zh/authors/">作者列表</a>
+                        <a href="/FreeCAD-Website/zh/author/">作者</a>
                       </li><li>
-                        <a href="/FreeCAD-Website/zh/categories/">分类列表</a>
+                        <a href="/FreeCAD-Website/zh/category/">分类</a>
                       </li><li>
                         <a href="/FreeCAD-Website/zh/tags/">标签列表</a>
-                      </li><li>
-                        <a href="/FreeCAD-Website/zh/versions/">版本列表</a>
                       </li></ul></li><li>
           <a
             href="/FreeCAD-Website/zh/community/">社区</a><ul><li>
@@ -2086,10 +2180,20 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
   </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/zh/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/zh/community/addons/">Addons</a>
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="/FreeCAD-Website/zh/community/telemetry/">Telemetry</a>
@@ -2097,7 +2201,7 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
           <a
             href="/FreeCAD-Website/zh/docs/" aria-current="page" class="active">文档</a><ul><li>
                   <a
-                    href="https://wiki.freecad.org/User_hub" target="_blank" rel="external noreferrer nofollow">User manual<svg
+                    href="https://wiki.freecad.org/User_hub/zh" target="_blank" rel="external noreferrer nofollow">User manual<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
@@ -2151,6 +2255,14 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     focusable="false">
     <use href="/FreeCAD-Website/svg/mastodon.svg#mastodon"></use>
   </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
     target="_blank" rel="external noreferrer nofollow"><svg
@@ -2182,6 +2294,14 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://maxwxyz.github.io/FreeCAD-Website/zh/index.xml"
+    type="application/rss&#43;xml"
+    title="RSS feed"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/rss.svg#rss"></use>
   </svg></a><a
   href="/FreeCAD-Website/zh/fedishare.html#title=Shortcodes&amp;description=Bundled%20Trigo%20Theme%20and%20Hugo%20shortcodes%20to%20enhance%20content.&amp;url=https://maxwxyz.github.io/FreeCAD-Website/zh/dev/web/shortcodes/"
   title="分享至 Fediverse"
@@ -2225,9 +2345,9 @@ HTML or other shortcodes as step content may not render as expected.</p></blockq
   </svg></a>
 </span>
 <span>
-    Modified: 2026-06-27
+    Modified: 2026-09-24
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/6cd0fe9f7eca6dfa94073171c4ffa6bf28958345">6cd0fe9<svg
+      Commit: <a href="https://github.com/freecad/website/commit/ddd9864106fd1ccc662d31503c82d183d6c29493">ddd98641<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

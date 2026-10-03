@@ -27,26 +27,23 @@
   </style><style>
       @media (prefers-color-scheme: dark) {
         :root {
-          --header: rgb(16, 16, 16);
-          --theme: rgb(32, 32, 32);
-          --entry: rgb(48, 48, 48);
+          --header: rgb(8, 8, 8);
+          --theme: rgb(16, 16, 16);
+          --entry: rgb(32, 32, 32);
           --tone: rgb(64, 64, 64);
-          --footer: rgb(80, 80, 80);
+          --backdrop: rgba(64, 64, 64, 0.8);
           --primary: rgb(240, 240, 240);
           --secondary: rgb(224, 224, 224);
           --tertiary: rgb(208, 208, 208);
-          --backdrop: rgba(0, 0, 0, 0.8);
-          --backdrop: rgba(0, 0, 0, 0.75);
-          --accent: rgb(102, 177, 255);
-          --accent-hover: rgb(65, 143, 222);
-          --underline: underline solid currentColor var(--line);
-          --border: var(--line) solid var(--tone);
+          --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+          --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+          --angle: 315deg;
         }
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/FreeCAD-Website/css/styles.cb71b36b5732d30ca23c01d073b3e202fee816532c3843c6b985ab0d743f3dc2.css"
-          integrity="sha256-y3Gza1cy0wyiPAHQc7PiAv7oFlMsOEPGuYWrDXQ/PcI="
+          href="/FreeCAD-Website/css/styles.ba4e0c8246fe032f190f1dac870eb9b1043660e412e761656abaa036a978d511.css"
+          integrity="sha256-uk4Mgkb&#43;Ay8ZDx2shw65sQQ2YOQS52FlarqgNql41RE="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -55,7 +52,11 @@
       type="image/x-icon"
       href="/FreeCAD-Website/favicon.ico"><link
       rel="apple-touch-icon"
-      href="/FreeCAD-Website/apple-touch-icon.png"><title>FreeCAD | Addon</title>
+      href="/FreeCAD-Website/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://maxwxyz.github.io/FreeCAD-Website/index.xml"
+    title="FreeCAD"><title>FreeCAD | Addon</title>
   <meta
     name="description"
     content="Your own free and open-source parametric modeler"><meta
@@ -96,19 +97,19 @@
 </div>
 <header class="site-header">
 
-  <div class="logo">
-    <a
-      href="/FreeCAD-Website/"
-      accesskey="h"
-      title="Homepage (Alt + H)"
-      aria-label="Homepage"><svg
+  <a
+    class="logo"
+    href="/FreeCAD-Website/"
+    accesskey="h"
+    title="Homepage (Alt + H)"
+    aria-label="Homepage">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/FreeCAD-Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/FreeCAD-Website/wordmark.svg#wordmark"></use>
     </svg></a>
-  </div>
 
   <div class="site-nav"><nav class="menu">
   <button
@@ -150,7 +151,7 @@
             href="/FreeCAD-Website/docs/">Documentation</a>
         </li><li>
           <a
-            href="/FreeCAD-Website/donate/" class="donate-button">♥︎ Donate</a>
+            href="/FreeCAD-Website/donate/" class="button donate">♥︎ Donate</a>
         </li></ul>
 </nav>
 <div class="language-dropdown">
@@ -201,7 +202,7 @@
     <use href="/FreeCAD-Website/svg/light.svg#light"></use>
   </svg></button>
 </div></div>
-</header><main style="--hue: 120;"><section class="hero">
+</header><main style="--hue: 140;"><section class="hero">
 
     <h1 class="title"><svg
     class="icon tags"
@@ -217,8 +218,12 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
   </svg><time datetime="2026-02-27T00:00:00Z">February 27, 2026</time>
-  </span></div>
-</a><a
+  </span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg>Showcase (30)</span></div></a><a
   class="card"
   href="/FreeCAD-Website/news/kiconnect-at-kicon-new-interoperability-between-freecad-and-kicad/"><div class="card-color" style="--hue: 80;"></div><h3 class="card-title">KiConnect at KiCon, New interoperability between FreeCAD and KiCad</h3><div class="card-metadata"><span class="meta"><svg
     class="icon date"
@@ -226,8 +231,12 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
   </svg><time datetime="2025-06-20T00:00:00Z">June 20, 2025</time>
-  </span></div>
-</a><a
+  </span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg>Showcase (30)</span></div></a><a
   class="card"
   href="/FreeCAD-Website/news/fused-filament-design-addon/"><figure class="thumbnail"><img
     class="img fused_filament_addon_rahix"
@@ -241,8 +250,12 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
   </svg><time datetime="2025-05-23T00:00:00Z">May 23, 2025</time>
-  </span></div>
-</a><a
+  </span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg>Showcase (30)</span></div></a><a
   class="card"
   href="/FreeCAD-Website/news/freecad-telemetry-addon-is-now-available/"><div class="card-color" style="--hue: 20;"></div><h3 class="card-title">FreeCAD Telemetry Addon is now available</h3><div class="card-metadata"><span class="meta"><svg
     class="icon date"
@@ -250,8 +263,12 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
   </svg><time datetime="2025-03-30T00:00:00Z">March 30, 2025</time>
-  </span></div>
-</a><a
+  </span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg>Announcement (94)</span></div></a><a
   class="card"
   href="/FreeCAD-Website/news/addon-spotlight-assembly-workbenches/"><div class="card-color" style="--hue: 60;"></div><h3 class="card-title">Addon Spotlight - Assembly Workbenches</h3><div class="card-metadata"><span class="meta"><svg
     class="icon date"
@@ -259,8 +276,22 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
   </svg><time datetime="2022-10-19T00:00:00Z">October 19, 2022</time>
-  </span></div>
-</a></div></div></main><footer class="site-footer"><a id="top-link"
+  </span><span class="meta author"><svg
+    class="icon author"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/author.svg#author"></use>
+  </svg><a href="/FreeCAD-Website/author/chris-hennes/">Chris Hennes (80)</a></span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg><a href="/FreeCAD-Website/category/feature/">Feature (18)</a></span><span class="meta tags"><svg
+    class="icon tags"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/tags.svg#tags"></use>
+  </svg><a href="/FreeCAD-Website/tags/addon/">Addon (5)</a><a href="/FreeCAD-Website/tags/assembly/">Assembly (2)</a></span></div></a></div></div></main><footer class="site-footer"><a id="top-link"
   href="#top"
   accesskey="g"
   aria-label="Go to Top"
@@ -277,37 +308,25 @@
             href="/FreeCAD-Website/features/">Features</a><ul></ul></li><li>
           <a
             href="/FreeCAD-Website/download/">Download</a><ul><li>
+                  <a
+                    href="/FreeCAD-Website/releases/">Releases</a>
+                </li><li>
                       <a
-                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development builds<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
+                        href="/FreeCAD-Website/download/addons/">Addons</a>
                     </li><li>
                       <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples an parts library<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
-                      <a
-                        href="/FreeCAD-Website/download/releases/">Releases</a>
+                        href="/FreeCAD-Website/download/unstable/">Unstable</a>
                     </li></ul></li><li>
           <a
             href="/FreeCAD-Website/news/">News</a><ul><li>
                   <a
                     href="/FreeCAD-Website/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/FreeCAD-Website/authors/">Authors</a>
+                        <a href="/FreeCAD-Website/author/">Author</a>
                       </li><li>
-                        <a href="/FreeCAD-Website/categories/">Categories</a>
+                        <a href="/FreeCAD-Website/category/">Category</a>
                       </li><li>
                         <a href="/FreeCAD-Website/tags/">Tags</a>
-                      </li><li>
-                        <a href="/FreeCAD-Website/versions/">Versions</a>
                       </li></ul></li><li>
           <a
             href="/FreeCAD-Website/community/">Community</a><ul><li>
@@ -331,10 +350,20 @@
   </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/community/addons/">Addons</a>
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="/FreeCAD-Website/community/telemetry/">Telemetry</a>
@@ -396,6 +425,14 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/mastodon.svg#mastodon"></use>
   </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
     target="_blank" rel="external noreferrer nofollow"><svg
@@ -427,6 +464,14 @@
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://maxwxyz.github.io/FreeCAD-Website/index.xml"
+    type="application/rss&#43;xml"
+    title="RSS feed"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/rss.svg#rss"></use>
   </svg></a></div><div class="copyright"><span>
     &copy; 2026
     <a

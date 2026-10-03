@@ -27,26 +27,23 @@
   </style><style>
       @media (prefers-color-scheme: dark) {
         :root {
-          --header: rgb(16, 16, 16);
-          --theme: rgb(32, 32, 32);
-          --entry: rgb(48, 48, 48);
+          --header: rgb(8, 8, 8);
+          --theme: rgb(16, 16, 16);
+          --entry: rgb(32, 32, 32);
           --tone: rgb(64, 64, 64);
-          --footer: rgb(80, 80, 80);
+          --backdrop: rgba(64, 64, 64, 0.8);
           --primary: rgb(240, 240, 240);
           --secondary: rgb(224, 224, 224);
           --tertiary: rgb(208, 208, 208);
-          --backdrop: rgba(0, 0, 0, 0.8);
-          --backdrop: rgba(0, 0, 0, 0.75);
-          --accent: rgb(102, 177, 255);
-          --accent-hover: rgb(65, 143, 222);
-          --underline: underline solid currentColor var(--line);
-          --border: var(--line) solid var(--tone);
+          --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+          --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+          --angle: 315deg;
         }
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/FreeCAD-Website/css/styles.cb71b36b5732d30ca23c01d073b3e202fee816532c3843c6b985ab0d743f3dc2.css"
-          integrity="sha256-y3Gza1cy0wyiPAHQc7PiAv7oFlMsOEPGuYWrDXQ/PcI="
+          href="/FreeCAD-Website/css/styles.ba4e0c8246fe032f190f1dac870eb9b1043660e412e761656abaa036a978d511.css"
+          integrity="sha256-uk4Mgkb&#43;Ay8ZDx2shw65sQQ2YOQS52FlarqgNql41RE="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -55,7 +52,11 @@
       type="image/x-icon"
       href="/FreeCAD-Website/favicon.ico"><link
       rel="apple-touch-icon"
-      href="/FreeCAD-Website/apple-touch-icon.png"><title>FreeCAD | New Grants - further Toponaming work, better API documentation</title>
+      href="/FreeCAD-Website/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://maxwxyz.github.io/FreeCAD-Website/index.xml"
+    title="FreeCAD"><title>FreeCAD | New Grants - further Toponaming work, better API documentation</title>
   <meta
     name="description"
     content="Your own free and open-source parametric modeler"><meta
@@ -95,7 +96,7 @@ Bradley McLean will continue his work on the TNP migration. He will develop new 
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2024-07-02T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-05-05T08:06:31+02:00">
+    <meta property="article:modified_time" content="2026-09-23T13:25:40+02:00">
     <meta property="article:tag" content="FPA">
     <meta property="article:tag" content="Grant">
 </head><body
@@ -108,19 +109,19 @@ Bradley McLean will continue his work on the TNP migration. He will develop new 
 </div>
 <header class="site-header">
 
-  <div class="logo">
-    <a
-      href="/FreeCAD-Website/"
-      accesskey="h"
-      title="Homepage (Alt + H)"
-      aria-label="Homepage"><svg
+  <a
+    class="logo"
+    href="/FreeCAD-Website/"
+    accesskey="h"
+    title="Homepage (Alt + H)"
+    aria-label="Homepage">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/FreeCAD-Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/FreeCAD-Website/wordmark.svg#wordmark"></use>
     </svg></a>
-  </div>
 
   <div class="site-nav"><nav class="menu">
   <button
@@ -162,7 +163,7 @@ Bradley McLean will continue his work on the TNP migration. He will develop new 
             href="/FreeCAD-Website/docs/">Documentation</a>
         </li><li>
           <a
-            href="/FreeCAD-Website/donate/" class="donate-button">♥︎ Donate</a>
+            href="/FreeCAD-Website/donate/" class="button donate">♥︎ Donate</a>
         </li></ul>
 </nav>
 <div class="language-dropdown">
@@ -221,17 +222,17 @@ Bradley McLean will continue his work on the TNP migration. He will develop new 
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
   </svg><time datetime="2024-07-02T00:00:00Z">July 2, 2024</time>
-  </span><span class="meta authors"><svg
-    class="icon authors"
+  </span><span class="meta author"><svg
+    class="icon author"
     aria-hidden="true"
     focusable="false">
-    <use href="/FreeCAD-Website/svg/authors.svg#authors"></use>
-  </svg><a href="/FreeCAD-Website/authors/aleksandr-prokudin/">Aleksandr Prokudin (169)</a></span><span class="meta categories"><svg
-    class="icon categories"
+    <use href="/FreeCAD-Website/svg/author.svg#author"></use>
+  </svg><a href="/FreeCAD-Website/author/aleksandr-prokudin/">Aleksandr Prokudin (169)</a></span><span class="meta category"><svg
+    class="icon category"
     aria-hidden="true"
     focusable="false">
-    <use href="/FreeCAD-Website/svg/categories.svg#categories"></use>
-  </svg><a href="/FreeCAD-Website/categories/announcement/">Announcement (94)</a></span><span class="meta tags"><svg
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg><a href="/FreeCAD-Website/category/announcement/">Announcement (94)</a></span><span class="meta tags"><svg
     class="icon tags"
     aria-hidden="true"
     focusable="false">
@@ -296,37 +297,25 @@ Bradley McLean will continue his work on the TNP migration. He will develop new 
             href="/FreeCAD-Website/features/">Features</a><ul></ul></li><li>
           <a
             href="/FreeCAD-Website/download/">Download</a><ul><li>
+                  <a
+                    href="/FreeCAD-Website/releases/">Releases</a>
+                </li><li>
                       <a
-                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development builds<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
+                        href="/FreeCAD-Website/download/addons/">Addons</a>
                     </li><li>
                       <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples an parts library<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
-                      <a
-                        href="/FreeCAD-Website/download/releases/">Releases</a>
+                        href="/FreeCAD-Website/download/unstable/">Unstable</a>
                     </li></ul></li><li>
           <a
             href="/FreeCAD-Website/news/" aria-current="page" class="active">News</a><ul><li>
                   <a
                     href="/FreeCAD-Website/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/FreeCAD-Website/authors/">Authors</a>
+                        <a href="/FreeCAD-Website/author/">Author</a>
                       </li><li>
-                        <a href="/FreeCAD-Website/categories/">Categories</a>
+                        <a href="/FreeCAD-Website/category/">Category</a>
                       </li><li>
                         <a href="/FreeCAD-Website/tags/">Tags</a>
-                      </li><li>
-                        <a href="/FreeCAD-Website/versions/">Versions</a>
                       </li></ul></li><li>
           <a
             href="/FreeCAD-Website/community/">Community</a><ul><li>
@@ -350,10 +339,20 @@ Bradley McLean will continue his work on the TNP migration. He will develop new 
   </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/community/addons/">Addons</a>
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="/FreeCAD-Website/community/telemetry/">Telemetry</a>
@@ -415,6 +414,14 @@ Bradley McLean will continue his work on the TNP migration. He will develop new 
     focusable="false">
     <use href="/FreeCAD-Website/svg/mastodon.svg#mastodon"></use>
   </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
     target="_blank" rel="external noreferrer nofollow"><svg
@@ -446,6 +453,14 @@ Bradley McLean will continue his work on the TNP migration. He will develop new 
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://maxwxyz.github.io/FreeCAD-Website/index.xml"
+    type="application/rss&#43;xml"
+    title="RSS feed"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/rss.svg#rss"></use>
   </svg></a><a
   href="/FreeCAD-Website/fedishare.html#title=New&#43;Grants&#43;-&#43;further&#43;Toponaming&#43;work%2C&#43;better&#43;API&#43;documentation&amp;description=The&#43;FreeCAD&#43;Project&#43;Association&#43;has&#43;just&#43;approved&#43;several&#43;more&#43;grants%3A%0ABradley&#43;McLean&#43;will&#43;continue&#43;his&#43;work&#43;on&#43;the&#43;TNP&#43;migration.&#43;He&#43;will&#43;develop&#43;new&#43;code&#43;to&#43;address&#43;portions&#43;of&#43;SubShapeBinder&#43;and&#43;%E2%80%A6%0A%23fpa&#43;%23grant&amp;url=https://maxwxyz.github.io/FreeCAD-Website/news/new-grants-approved-toponaming-api-docs/"
   title="Share on Fediverse"
@@ -489,9 +504,9 @@ Bradley McLean will continue his work on the TNP migration. He will develop new 
   </svg></a>
 </span>
 <span>
-    Modified: 2026-05-05
+    Modified: 2026-09-23
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/b17445f590d892755b51f7f35ced061e6eb392b5">b17445f<svg
+      Commit: <a href="https://github.com/freecad/website/commit/efdfa08161fa1b81bbff5f770b0baaf19e5deffb">efdfa081<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

@@ -27,26 +27,23 @@
   </style><style>
       @media (prefers-color-scheme: dark) {
         :root {
-          --header: rgb(16, 16, 16);
-          --theme: rgb(32, 32, 32);
-          --entry: rgb(48, 48, 48);
+          --header: rgb(8, 8, 8);
+          --theme: rgb(16, 16, 16);
+          --entry: rgb(32, 32, 32);
           --tone: rgb(64, 64, 64);
-          --footer: rgb(80, 80, 80);
+          --backdrop: rgba(64, 64, 64, 0.8);
           --primary: rgb(240, 240, 240);
           --secondary: rgb(224, 224, 224);
           --tertiary: rgb(208, 208, 208);
-          --backdrop: rgba(0, 0, 0, 0.8);
-          --backdrop: rgba(0, 0, 0, 0.75);
-          --accent: rgb(102, 177, 255);
-          --accent-hover: rgb(65, 143, 222);
-          --underline: underline solid currentColor var(--line);
-          --border: var(--line) solid var(--tone);
+          --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+          --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+          --angle: 315deg;
         }
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/FreeCAD-Website/css/styles.cb71b36b5732d30ca23c01d073b3e202fee816532c3843c6b985ab0d743f3dc2.css"
-          integrity="sha256-y3Gza1cy0wyiPAHQc7PiAv7oFlMsOEPGuYWrDXQ/PcI="
+          href="/FreeCAD-Website/css/styles.ba4e0c8246fe032f190f1dac870eb9b1043660e412e761656abaa036a978d511.css"
+          integrity="sha256-uk4Mgkb&#43;Ay8ZDx2shw65sQQ2YOQS52FlarqgNql41RE="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -55,7 +52,11 @@
       type="image/x-icon"
       href="/FreeCAD-Website/favicon.ico"><link
       rel="apple-touch-icon"
-      href="/FreeCAD-Website/apple-touch-icon.png"><title>FreeCAD | Q1 2026 Grant Program</title>
+      href="/FreeCAD-Website/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://maxwxyz.github.io/FreeCAD-Website/de/index.xml"
+    title="FreeCAD"><title>FreeCAD | Q1 2026 Grant Program</title>
   <meta
     name="description"
     content="Dein eigener freier und Open-Source parametrischer Modellierer"><meta
@@ -94,7 +95,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2026-03-02T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-05-05T08:06:31+02:00">
+    <meta property="article:modified_time" content="2026-09-23T13:25:40+02:00">
     <meta property="article:tag" content="FPA">
     <meta property="article:tag" content="Grant">
 </head><body
@@ -107,19 +108,19 @@
 </div>
 <header class="site-header">
 
-  <div class="logo">
-    <a
-      href="/FreeCAD-Website/de/"
-      accesskey="h"
-      title="Home (Alt + H)"
-      aria-label="Home"><svg
+  <a
+    class="logo"
+    href="/FreeCAD-Website/de/"
+    accesskey="h"
+    title="Home (Alt + H)"
+    aria-label="Home">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/FreeCAD-Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/FreeCAD-Website/wordmark.svg#wordmark"></use>
     </svg></a>
-  </div>
 
   <div class="site-nav"><nav class="menu">
   <button
@@ -161,7 +162,7 @@
             href="/FreeCAD-Website/de/docs/">Dokumentation</a>
         </li><li>
           <a
-            href="/FreeCAD-Website/de/donate/" class="donate-button">♥︎ Spenden</a>
+            href="/FreeCAD-Website/de/donate/" class="button donate">♥︎ Spenden</a>
         </li></ul>
 </nav>
 <div class="language-dropdown">
@@ -220,17 +221,17 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
   </svg><time datetime="2026-03-02T00:00:00Z">2. März 2026</time>
-  </span><span class="meta authors"><svg
-    class="icon authors"
+  </span><span class="meta author"><svg
+    class="icon author"
     aria-hidden="true"
     focusable="false">
-    <use href="/FreeCAD-Website/svg/authors.svg#authors"></use>
-  </svg><a href="/FreeCAD-Website/de/authors/aleksandr-prokudin/">Aleksandr Prokudin (169)</a></span><span class="meta categories"><svg
-    class="icon categories"
+    <use href="/FreeCAD-Website/svg/author.svg#author"></use>
+  </svg><a href="/FreeCAD-Website/de/author/aleksandr-prokudin/">Aleksandr Prokudin (169)</a></span><span class="meta category"><svg
+    class="icon category"
     aria-hidden="true"
     focusable="false">
-    <use href="/FreeCAD-Website/svg/categories.svg#categories"></use>
-  </svg><a href="/FreeCAD-Website/de/categories/announcement/">Announcement (94)</a></span><span class="meta tags"><svg
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg><a href="/FreeCAD-Website/de/category/announcement/">Announcement (94)</a></span><span class="meta tags"><svg
     class="icon tags"
     aria-hidden="true"
     focusable="false">
@@ -314,37 +315,25 @@
             href="/FreeCAD-Website/de/features/">Funktionen</a><ul></ul></li><li>
           <a
             href="/FreeCAD-Website/de/download/">Herunterladen</a><ul><li>
+                  <a
+                    href="/FreeCAD-Website/de/releases/">Releases</a>
+                </li><li>
                       <a
-                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development builds<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
+                        href="/FreeCAD-Website/de/download/addons/">Addons</a>
                     </li><li>
                       <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples an parts library<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
-                      <a
-                        href="/FreeCAD-Website/de/download/releases/">Releases</a>
+                        href="/FreeCAD-Website/de/download/unstable/">Unstable</a>
                     </li></ul></li><li>
           <a
             href="/FreeCAD-Website/de/news/" aria-current="page" class="active">Aktuelles</a><ul><li>
                   <a
                     href="/FreeCAD-Website/de/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/FreeCAD-Website/de/authors/">Autoren</a>
+                        <a href="/FreeCAD-Website/de/author/">Autor</a>
                       </li><li>
-                        <a href="/FreeCAD-Website/de/categories/">Kategorien</a>
+                        <a href="/FreeCAD-Website/de/category/">Kategorie</a>
                       </li><li>
                         <a href="/FreeCAD-Website/de/tags/">Tags</a>
-                      </li><li>
-                        <a href="/FreeCAD-Website/de/versions/">Versionen</a>
                       </li></ul></li><li>
           <a
             href="/FreeCAD-Website/de/community/">Community</a><ul><li>
@@ -368,10 +357,20 @@
   </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/de/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/de/community/addons/">Addons</a>
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="/FreeCAD-Website/de/community/telemetry/">Telemetry</a>
@@ -379,7 +378,7 @@
           <a
             href="/FreeCAD-Website/de/docs/">Dokumentation</a><ul><li>
                   <a
-                    href="https://wiki.freecad.org/User_hub" target="_blank" rel="external noreferrer nofollow">User manual<svg
+                    href="https://wiki.freecad.org/User_hub/de" target="_blank" rel="external noreferrer nofollow">User manual<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
@@ -433,6 +432,14 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/mastodon.svg#mastodon"></use>
   </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
     target="_blank" rel="external noreferrer nofollow"><svg
@@ -464,6 +471,14 @@
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://maxwxyz.github.io/FreeCAD-Website/de/index.xml"
+    type="application/rss&#43;xml"
+    title="RSS feed"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/rss.svg#rss"></use>
   </svg></a><a
   href="/FreeCAD-Website/de/fedishare.html#title=Q1&#43;2026&#43;Grant&#43;Program&amp;description=The&#43;FreeCAD&#43;Project&#43;Association&#43;is&#43;now&#43;accepting&#43;grant&#43;applications&#43;for&#43;the&#43;first&#43;quarter&#43;of&#43;2026.&#43;If&#43;you&#43;are&#43;interested&#43;in&#43;participating%2C&#43;please&#43;submit&#43;your&#43;application&#43;by&#43;March&#43;10.&#43;We&#43;will&#43;announce&#43;%E2%80%A6%0A%23fpa&#43;%23grant&amp;url=https://maxwxyz.github.io/FreeCAD-Website/de/news/q1-2026-grant-program/"
   title="Teilen auf Fediverse"
@@ -507,9 +522,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-05-05
+    Modified: 2026-09-23
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/b17445f590d892755b51f7f35ced061e6eb392b5">b17445f<svg
+      Commit: <a href="https://github.com/freecad/website/commit/efdfa08161fa1b81bbff5f770b0baaf19e5deffb">efdfa081<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

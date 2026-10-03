@@ -27,26 +27,23 @@
   </style><style>
       @media (prefers-color-scheme: dark) {
         :root {
-          --header: rgb(16, 16, 16);
-          --theme: rgb(32, 32, 32);
-          --entry: rgb(48, 48, 48);
+          --header: rgb(8, 8, 8);
+          --theme: rgb(16, 16, 16);
+          --entry: rgb(32, 32, 32);
           --tone: rgb(64, 64, 64);
-          --footer: rgb(80, 80, 80);
+          --backdrop: rgba(64, 64, 64, 0.8);
           --primary: rgb(240, 240, 240);
           --secondary: rgb(224, 224, 224);
           --tertiary: rgb(208, 208, 208);
-          --backdrop: rgba(0, 0, 0, 0.8);
-          --backdrop: rgba(0, 0, 0, 0.75);
-          --accent: rgb(102, 177, 255);
-          --accent-hover: rgb(65, 143, 222);
-          --underline: underline solid currentColor var(--line);
-          --border: var(--line) solid var(--tone);
+          --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+          --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+          --angle: 315deg;
         }
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/FreeCAD-Website/css/styles.cb71b36b5732d30ca23c01d073b3e202fee816532c3843c6b985ab0d743f3dc2.css"
-          integrity="sha256-y3Gza1cy0wyiPAHQc7PiAv7oFlMsOEPGuYWrDXQ/PcI="
+          href="/FreeCAD-Website/css/styles.ba4e0c8246fe032f190f1dac870eb9b1043660e412e761656abaa036a978d511.css"
+          integrity="sha256-uk4Mgkb&#43;Ay8ZDx2shw65sQQ2YOQS52FlarqgNql41RE="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -55,7 +52,11 @@
       type="image/x-icon"
       href="/FreeCAD-Website/favicon.ico"><link
       rel="apple-touch-icon"
-      href="/FreeCAD-Website/apple-touch-icon.png"><title>FreeCAD | CMS</title>
+      href="/FreeCAD-Website/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://maxwxyz.github.io/FreeCAD-Website/index.xml"
+    title="FreeCAD"><title>FreeCAD | CMS</title>
   <meta
     name="description"
     content="How to use the Sveltia CMS for the FreeCAD website."><meta
@@ -93,7 +94,7 @@
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="article">
     <meta property="article:section" content="dev">
-    <meta property="article:modified_time" content="2026-06-27T13:19:47+02:00">
+    <meta property="article:modified_time" content="2026-09-25T09:05:55+02:00">
 </head><body
     class="single type-dev kind-page "
     id="top">
@@ -104,19 +105,19 @@
 </div>
 <header class="site-header">
 
-  <div class="logo">
-    <a
-      href="/FreeCAD-Website/"
-      accesskey="h"
-      title="Homepage (Alt + H)"
-      aria-label="Homepage"><svg
+  <a
+    class="logo"
+    href="/FreeCAD-Website/"
+    accesskey="h"
+    title="Homepage (Alt + H)"
+    aria-label="Homepage">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/FreeCAD-Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/FreeCAD-Website/wordmark.svg#wordmark"></use>
     </svg></a>
-  </div>
 
   <div class="site-nav"><nav class="menu">
   <button
@@ -158,7 +159,7 @@
             href="/FreeCAD-Website/docs/" aria-current="page" class="active">Documentation</a>
         </li><li>
           <a
-            href="/FreeCAD-Website/donate/" class="donate-button">♥︎ Donate</a>
+            href="/FreeCAD-Website/donate/" class="button donate">♥︎ Donate</a>
         </li></ul>
 </nav>
 <div class="language-dropdown">
@@ -216,7 +217,7 @@
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/time.svg#time"></use>
-  </svg>5 min</span></div></section><nav class="toc">
+  </svg>6 min</span></div></section><nav class="toc">
   <input
     type="checkbox"
     id="toc-checkbox"
@@ -313,6 +314,7 @@
             <li><a href="#create-new-content">Create New Content</a></li>
             <li><a href="#upload-images-or-files">Upload Images or Files</a></li>
             <li><a href="#manage-translations">Manage Translations</a></li>
+            <li><a href="#editorial-workflow">Editorial Workflow</a></li>
           </ul>
         </li>
         <li><a href="#need-help">Need Help?</a></li>
@@ -420,7 +422,7 @@ Both workflows require a GitHub account, the main git platform currently used by
   </svg></a>
 </h3><ul>
 <li>Clone the repository locally as described in the <a
-  href="/FreeCAD-Website/dev/web/start/#building"
+  href="/home/runner/work/FreeCAD-Website/FreeCAD-Website/content/en/dev/web/start/index.md#building"
   class="internal-tooltip hash-link"><svg
     class="icon hash"
     aria-hidden="true"
@@ -560,7 +562,7 @@ Both workflows require a GitHub account, the main git platform currently used by
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/cross.svg#cross"></use>
-  </svg></button><p>CMS dashboard</p></div><figcaption>CMS dashboard</figcaption></figure><p>The top-left FreeCAD icon links to the public website, followed by the Collections and Assets tabs (1).
+  </svg></button><p>CMS dashboard</p></div><figcaption>CMS dashboard</figcaption></figure><p>The top-left FreeCAD icon links to the public website, followed by the Collections, Assets, and Editorial Workflow tabs (1).
 The top-center search field (2) looks for entries in the whole repository, with the menus (3) on the top-right.</p>
 <figure class="image"><button
           aria-label="Zoom image"
@@ -811,9 +813,10 @@ The Markdown code can be seen by clicking on the Markdown icon on the right of t
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/cross.svg#cross"></use>
-  </svg></button><p>Nested shortcodes</p></div><figcaption>Nested shortcodes</figcaption></figure><p>Note the hierarchy between the <code>Body</code> field (1), the <code>Block</code> shortcodes (2) and the nested <code>Group</code> shortcodes (3).</p>
+  </svg></button><p>Nested shortcodes</p></div><figcaption>Nested shortcodes</figcaption></figure><p>In the example above, note the hierarchy between the <code>Body</code> field (1), the <code>Block</code> shortcodes (2) and the nested <code>Group</code> shortcodes (3).</p>
 <p>Some shortcodes are displayed as compact buttons opening a dialog, such as the <code>Button</code> shortcode shown here.</p>
 <p>After making changes, use the <code>Save</code> button on the top-right.</p>
+<p>Changes can be submitted for review or saved as <code>Draft</code> for further changes at a later time.</p>
 <h3
   id="create-new-content">Create New Content<a class="heading-anchor"
      href="#create-new-content"
@@ -946,7 +949,29 @@ Management features (3) and information on the selected files (4) are available 
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/cross.svg#cross"></use>
-  </svg></button><p>Automatic translation services</p></div><figcaption>Automatic translation services</figcaption></figure><h2
+  </svg></button><p>Automatic translation services</p></div><figcaption>Automatic translation services</figcaption></figure><h3
+  id="editorial-workflow">Editorial Workflow<a class="heading-anchor"
+     href="#editorial-workflow"
+     title="Editorial Workflow"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h3><p>The Editorial Workflow tab allows to manage the content lifecycle: changes can be saved as a <code>Draft</code>, submitted for review, or accepted and published to the website.</p>
+<p>Usually, writers and editors add and edit content. They then save the changes of the page we are working on as <code>Draft</code>.
+This allows to come back at a later time to make more changes.
+When the page is ready for review by reviewers, the <code>Draft</code> status is removed and the changes are labelled for review.
+After the page is fully reviewed and validated, it gets published.</p>
+<p>More technical details on the Editorial Workflow can be found on the <a
+  href="https://sveltiacms.app/en/docs/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">CMS docs<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a></p>
+<h2
   id="need-help">Need Help?<a class="heading-anchor"
      href="#need-help"
      title="Need Help?"><svg
@@ -999,37 +1024,25 @@ Management features (3) and information on the selected files (4) are available 
             href="/FreeCAD-Website/features/">Features</a><ul></ul></li><li>
           <a
             href="/FreeCAD-Website/download/">Download</a><ul><li>
+                  <a
+                    href="/FreeCAD-Website/releases/">Releases</a>
+                </li><li>
                       <a
-                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development builds<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
+                        href="/FreeCAD-Website/download/addons/">Addons</a>
                     </li><li>
                       <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples an parts library<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
-                      <a
-                        href="/FreeCAD-Website/download/releases/">Releases</a>
+                        href="/FreeCAD-Website/download/unstable/">Unstable</a>
                     </li></ul></li><li>
           <a
             href="/FreeCAD-Website/news/">News</a><ul><li>
                   <a
                     href="/FreeCAD-Website/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/FreeCAD-Website/authors/">Authors</a>
+                        <a href="/FreeCAD-Website/author/">Author</a>
                       </li><li>
-                        <a href="/FreeCAD-Website/categories/">Categories</a>
+                        <a href="/FreeCAD-Website/category/">Category</a>
                       </li><li>
                         <a href="/FreeCAD-Website/tags/">Tags</a>
-                      </li><li>
-                        <a href="/FreeCAD-Website/versions/">Versions</a>
                       </li></ul></li><li>
           <a
             href="/FreeCAD-Website/community/">Community</a><ul><li>
@@ -1053,10 +1066,20 @@ Management features (3) and information on the selected files (4) are available 
   </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/community/addons/">Addons</a>
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="/FreeCAD-Website/community/telemetry/">Telemetry</a>
@@ -1118,6 +1141,14 @@ Management features (3) and information on the selected files (4) are available 
     focusable="false">
     <use href="/FreeCAD-Website/svg/mastodon.svg#mastodon"></use>
   </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
     target="_blank" rel="external noreferrer nofollow"><svg
@@ -1149,6 +1180,14 @@ Management features (3) and information on the selected files (4) are available 
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://maxwxyz.github.io/FreeCAD-Website/index.xml"
+    type="application/rss&#43;xml"
+    title="RSS feed"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/rss.svg#rss"></use>
   </svg></a><a
   href="/FreeCAD-Website/fedishare.html#title=Content&#43;Management&#43;System&amp;description=How%20to%20use%20the%20Sveltia%20CMS%20for%20the%20FreeCAD%20website.&amp;url=https://maxwxyz.github.io/FreeCAD-Website/dev/web/cms/"
   title="Share on Fediverse"
@@ -1192,9 +1231,9 @@ Management features (3) and information on the selected files (4) are available 
   </svg></a>
 </span>
 <span>
-    Modified: 2026-06-27
+    Modified: 2026-09-25
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/6cd0fe9f7eca6dfa94073171c4ffa6bf28958345">6cd0fe9<svg
+      Commit: <a href="https://github.com/freecad/website/commit/b6c554684b31f6de55cfe946cfdc80ceab59a5dd">b6c55468<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

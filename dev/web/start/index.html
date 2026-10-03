@@ -27,26 +27,23 @@
   </style><style>
       @media (prefers-color-scheme: dark) {
         :root {
-          --header: rgb(16, 16, 16);
-          --theme: rgb(32, 32, 32);
-          --entry: rgb(48, 48, 48);
+          --header: rgb(8, 8, 8);
+          --theme: rgb(16, 16, 16);
+          --entry: rgb(32, 32, 32);
           --tone: rgb(64, 64, 64);
-          --footer: rgb(80, 80, 80);
+          --backdrop: rgba(64, 64, 64, 0.8);
           --primary: rgb(240, 240, 240);
           --secondary: rgb(224, 224, 224);
           --tertiary: rgb(208, 208, 208);
-          --backdrop: rgba(0, 0, 0, 0.8);
-          --backdrop: rgba(0, 0, 0, 0.75);
-          --accent: rgb(102, 177, 255);
-          --accent-hover: rgb(65, 143, 222);
-          --underline: underline solid currentColor var(--line);
-          --border: var(--line) solid var(--tone);
+          --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+          --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+          --angle: 315deg;
         }
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/FreeCAD-Website/css/styles.cb71b36b5732d30ca23c01d073b3e202fee816532c3843c6b985ab0d743f3dc2.css"
-          integrity="sha256-y3Gza1cy0wyiPAHQc7PiAv7oFlMsOEPGuYWrDXQ/PcI="
+          href="/FreeCAD-Website/css/styles.ba4e0c8246fe032f190f1dac870eb9b1043660e412e761656abaa036a978d511.css"
+          integrity="sha256-uk4Mgkb&#43;Ay8ZDx2shw65sQQ2YOQS52FlarqgNql41RE="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -55,7 +52,11 @@
       type="image/x-icon"
       href="/FreeCAD-Website/favicon.ico"><link
       rel="apple-touch-icon"
-      href="/FreeCAD-Website/apple-touch-icon.png"><title>FreeCAD | Website introduction</title>
+      href="/FreeCAD-Website/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://maxwxyz.github.io/FreeCAD-Website/index.xml"
+    title="FreeCAD"><title>FreeCAD | Website introduction</title>
   <meta
     name="description"
     content="Get involved with the FreeCAD website."><meta
@@ -104,19 +105,19 @@
 </div>
 <header class="site-header">
 
-  <div class="logo">
-    <a
-      href="/FreeCAD-Website/"
-      accesskey="h"
-      title="Homepage (Alt + H)"
-      aria-label="Homepage"><svg
+  <a
+    class="logo"
+    href="/FreeCAD-Website/"
+    accesskey="h"
+    title="Homepage (Alt + H)"
+    aria-label="Homepage">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/FreeCAD-Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/FreeCAD-Website/wordmark.svg#wordmark"></use>
     </svg></a>
-  </div>
 
   <div class="site-nav"><nav class="menu">
   <button
@@ -158,7 +159,7 @@
             href="/FreeCAD-Website/docs/" aria-current="page" class="active">Documentation</a>
         </li><li>
           <a
-            href="/FreeCAD-Website/donate/" class="donate-button">♥︎ Donate</a>
+            href="/FreeCAD-Website/donate/" class="button donate">♥︎ Donate</a>
         </li></ul>
 </nav>
 <div class="language-dropdown">
@@ -372,7 +373,7 @@ Have a question or feedback? Feel free to <a
   class="internal-tooltip">Guidelines<span class="tooltip">
         <strong>Guidelines</strong>Guidelines for contributing to the website.</span></a>.</p>
 <p>Want to join the current <a
-  href="teams"
+  href="/FreeCAD-Website/dev/teams/"
   class="internal-tooltip">website team</a>? Get in touch!</p>
 <p>Contributions of all kinds are welcome: content, translations, bug fixes, theme improvements, testing, documentation, bug reports, and more&hellip; Depending on the scope, some basic know-how of Git, Markdown, HTML, CSS, Javascript, YAML/JSON and Hugo template syntax is recommended. Create appropriate <a
   href="https://github.com/FreeCAD/Website/issues"
@@ -608,13 +609,18 @@ Have a question or feedback? Feel free to <a
 </div><footer class="single-footer">
     <nav class="pagination"><a
             class="button next"
-            href="/FreeCAD-Website/dev/infra/"
-            title="Next section"><svg
+            href="https://freecad.github.io/Addon-Academy/"
+            title="Next section" target="_blank" rel="external noreferrer nofollow"><svg
     class="icon folder_closed"
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/folder_closed.svg#folder_closed"></use>
-  </svg>Infrastructure</a><a
+  </svg>Addon Academy<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a><a
             class="button prev"
             href="/FreeCAD-Website/dev/web/guidelines/"
             title="Previous article">Guidelines<svg
@@ -640,37 +646,25 @@ Have a question or feedback? Feel free to <a
             href="/FreeCAD-Website/features/">Features</a><ul></ul></li><li>
           <a
             href="/FreeCAD-Website/download/">Download</a><ul><li>
+                  <a
+                    href="/FreeCAD-Website/releases/">Releases</a>
+                </li><li>
                       <a
-                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development builds<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
+                        href="/FreeCAD-Website/download/addons/">Addons</a>
                     </li><li>
                       <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples an parts library<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
-                      <a
-                        href="/FreeCAD-Website/download/releases/">Releases</a>
+                        href="/FreeCAD-Website/download/unstable/">Unstable</a>
                     </li></ul></li><li>
           <a
             href="/FreeCAD-Website/news/">News</a><ul><li>
                   <a
                     href="/FreeCAD-Website/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/FreeCAD-Website/authors/">Authors</a>
+                        <a href="/FreeCAD-Website/author/">Author</a>
                       </li><li>
-                        <a href="/FreeCAD-Website/categories/">Categories</a>
+                        <a href="/FreeCAD-Website/category/">Category</a>
                       </li><li>
                         <a href="/FreeCAD-Website/tags/">Tags</a>
-                      </li><li>
-                        <a href="/FreeCAD-Website/versions/">Versions</a>
                       </li></ul></li><li>
           <a
             href="/FreeCAD-Website/community/">Community</a><ul><li>
@@ -694,10 +688,20 @@ Have a question or feedback? Feel free to <a
   </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/community/addons/">Addons</a>
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="/FreeCAD-Website/community/telemetry/">Telemetry</a>
@@ -759,6 +763,14 @@ Have a question or feedback? Feel free to <a
     focusable="false">
     <use href="/FreeCAD-Website/svg/mastodon.svg#mastodon"></use>
   </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
     target="_blank" rel="external noreferrer nofollow"><svg
@@ -790,6 +802,14 @@ Have a question or feedback? Feel free to <a
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://maxwxyz.github.io/FreeCAD-Website/index.xml"
+    type="application/rss&#43;xml"
+    title="RSS feed"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/rss.svg#rss"></use>
   </svg></a><a
   href="/FreeCAD-Website/fedishare.html#title=Website&#43;introduction&amp;description=Get%20involved%20with%20the%20FreeCAD%20website.&amp;url=https://maxwxyz.github.io/FreeCAD-Website/dev/web/start/"
   title="Share on Fediverse"
@@ -835,7 +855,7 @@ Have a question or feedback? Feel free to <a
 <span>
     Modified: 2026-06-27
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/6cd0fe9f7eca6dfa94073171c4ffa6bf28958345">6cd0fe9<svg
+      Commit: <a href="https://github.com/freecad/website/commit/6cd0fe9f7eca6dfa94073171c4ffa6bf28958345">6cd0fe9f<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

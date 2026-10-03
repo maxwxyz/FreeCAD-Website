@@ -27,26 +27,23 @@
   </style><style>
       @media (prefers-color-scheme: dark) {
         :root {
-          --header: rgb(16, 16, 16);
-          --theme: rgb(32, 32, 32);
-          --entry: rgb(48, 48, 48);
+          --header: rgb(8, 8, 8);
+          --theme: rgb(16, 16, 16);
+          --entry: rgb(32, 32, 32);
           --tone: rgb(64, 64, 64);
-          --footer: rgb(80, 80, 80);
+          --backdrop: rgba(64, 64, 64, 0.8);
           --primary: rgb(240, 240, 240);
           --secondary: rgb(224, 224, 224);
           --tertiary: rgb(208, 208, 208);
-          --backdrop: rgba(0, 0, 0, 0.8);
-          --backdrop: rgba(0, 0, 0, 0.75);
-          --accent: rgb(102, 177, 255);
-          --accent-hover: rgb(65, 143, 222);
-          --underline: underline solid currentColor var(--line);
-          --border: var(--line) solid var(--tone);
+          --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+          --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+          --angle: 315deg;
         }
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/FreeCAD-Website/css/styles.cb71b36b5732d30ca23c01d073b3e202fee816532c3843c6b985ab0d743f3dc2.css"
-          integrity="sha256-y3Gza1cy0wyiPAHQc7PiAv7oFlMsOEPGuYWrDXQ/PcI="
+          href="/FreeCAD-Website/css/styles.ba4e0c8246fe032f190f1dac870eb9b1043660e412e761656abaa036a978d511.css"
+          integrity="sha256-uk4Mgkb&#43;Ay8ZDx2shw65sQQ2YOQS52FlarqgNql41RE="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -55,7 +52,11 @@
       type="image/x-icon"
       href="/FreeCAD-Website/favicon.ico"><link
       rel="apple-touch-icon"
-      href="/FreeCAD-Website/apple-touch-icon.png"><title>FreeCAD | News</title>
+      href="/FreeCAD-Website/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://maxwxyz.github.io/FreeCAD-Website/pt/index.xml"
+    title="FreeCAD"><title>FreeCAD | News</title>
   <meta
     name="description"
     content="Browse the latest news"><meta
@@ -102,19 +103,19 @@
 </div>
 <header class="site-header">
 
-  <div class="logo">
-    <a
-      href="/FreeCAD-Website/pt/"
-      accesskey="h"
-      title="Início (Alt + H)"
-      aria-label="Início"><svg
+  <a
+    class="logo"
+    href="/FreeCAD-Website/pt/"
+    accesskey="h"
+    title="Início (Alt + H)"
+    aria-label="Início">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/FreeCAD-Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/FreeCAD-Website/wordmark.svg#wordmark"></use>
     </svg></a>
-  </div>
 
   <div class="site-nav"><nav class="menu">
   <button
@@ -156,7 +157,7 @@
             href="/FreeCAD-Website/pt/docs/">Documentação</a>
         </li><li>
           <a
-            href="/FreeCAD-Website/pt/donate/" class="donate-button">♥ Faça uma doação</a>
+            href="/FreeCAD-Website/pt/donate/" class="button donate">♥ Faça uma doação</a>
         </li></ul>
 </nav>
 <div class="language-dropdown">
@@ -210,34 +211,27 @@
 </header><main style="--hue: 40;"><section class="hero">
 
     <h1 class="title">News</h1><h3 class="description">Browse the latest news</h3><div class="buttons"><a
-              href="/FreeCAD-Website/pt/authors/"
+              href="/FreeCAD-Website/pt/author/"
               class="button"><svg
-    class="icon authors"
+    class="icon author"
     aria-hidden="true"
     focusable="false">
-    <use href="/FreeCAD-Website/svg/authors.svg#authors"></use>
-  </svg>Autores (9)</a><a
-              href="/FreeCAD-Website/pt/categories/"
+    <use href="/FreeCAD-Website/svg/author.svg#author"></use>
+  </svg>Autor (9)</a><a
+              href="/FreeCAD-Website/pt/category/"
               class="button"><svg
-    class="icon categories"
+    class="icon category"
     aria-hidden="true"
     focusable="false">
-    <use href="/FreeCAD-Website/svg/categories.svg#categories"></use>
-  </svg>Categorias (6)</a><a
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg>Categoria (6)</a><a
               href="/FreeCAD-Website/pt/tags/"
               class="button"><svg
     class="icon tags"
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/tags.svg#tags"></use>
-  </svg>Tags (64)</a><a
-              href="/FreeCAD-Website/pt/versions/"
-              class="button"><svg
-    class="icon versions"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/versions.svg#versions"></use>
-  </svg>Versões (11)</a><a
+  </svg>Tags (67)</a><a
                 href="/FreeCAD-Website/pt/news/archives/"
                 class="button">Archives</a></div></section>
 
@@ -250,8 +244,12 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
   </svg><time datetime="2024-12-25T00:00:00Z">25 de dezembro de 2024</time>
-  </span></div>
-</a><a
+  </span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg>Update (158)</span></div></a><a
   class="card"
   href="/FreeCAD-Website/pt/news/wip-wednesday-18-december-2024/"><div class="card-color" style="--hue: 120;"></div><h3 class="card-title">WIP Wednesday - 18 December 2024</h3><div class="card-metadata"><span class="meta"><svg
     class="icon date"
@@ -259,8 +257,12 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
   </svg><time datetime="2024-12-18T00:00:00Z">18 de dezembro de 2024</time>
-  </span></div>
-</a><a
+  </span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg>Update (158)</span></div></a><a
   class="card"
   href="/FreeCAD-Website/pt/news/tutorial-festive-tree-decoration-using-the-revolution-tool/"><figure class="thumbnail"><img
     class="img main"
@@ -274,8 +276,12 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
   </svg><time datetime="2024-12-13T00:00:00Z">13 de dezembro de 2024</time>
-  </span></div>
-</a><a
+  </span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg>Tutorial (26)</span></div></a><a
   class="card"
   href="/FreeCAD-Website/pt/news/wip-wednesday-11-december-2024/"><div class="card-color" style="--hue: 120;"></div><h3 class="card-title">WIP Wednesday - 11 December 2024</h3><div class="card-metadata"><span class="meta"><svg
     class="icon date"
@@ -283,8 +289,12 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
   </svg><time datetime="2024-12-11T00:00:00Z">11 de dezembro de 2024</time>
-  </span></div>
-</a><a
+  </span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg>Update (158)</span></div></a><a
   class="card"
   href="/FreeCAD-Website/pt/news/wip-wednesday-4-december-2024/"><div class="card-color" style="--hue: 120;"></div><h3 class="card-title">WIP Wednesday - 4 December 2024</h3><div class="card-metadata"><span class="meta"><svg
     class="icon date"
@@ -292,8 +302,12 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
   </svg><time datetime="2024-12-04T00:00:00Z">4 de dezembro de 2024</time>
-  </span></div>
-</a><a
+  </span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg>Update (158)</span></div></a><a
   class="card"
   href="/FreeCAD-Website/pt/news/tutorial-themes-and-workbench-layout/"><figure class="thumbnail"><img
     class="img freecad_lite_theme"
@@ -307,8 +321,12 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
   </svg><time datetime="2024-12-03T00:00:00Z">3 de dezembro de 2024</time>
-  </span></div>
-</a><a
+  </span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg>Tutorial (26)</span></div></a><a
   class="card"
   href="/FreeCAD-Website/pt/news/new-grants-transparent-preview-in-part-design-interactive-sketcher-tutorials/"><div class="card-color" style="--hue: 20;"></div><h3 class="card-title">New Grants - Transparent preview in Part Design, interactive Sketcher tutorials</h3><div class="card-metadata"><span class="meta"><svg
     class="icon date"
@@ -316,8 +334,12 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
   </svg><time datetime="2024-12-02T00:00:00Z">2 de dezembro de 2024</time>
-  </span></div>
-</a><a
+  </span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg>Announcement (94)</span></div></a><a
   class="card"
   href="/FreeCAD-Website/pt/news/wip-wednesday-27-november-2024/"><div class="card-color" style="--hue: 120;"></div><h3 class="card-title">WIP Wednesday - 27 November 2024</h3><div class="card-metadata"><span class="meta"><svg
     class="icon date"
@@ -325,8 +347,12 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
   </svg><time datetime="2024-11-27T00:00:00Z">27 de novembro de 2024</time>
-  </span></div>
-</a><a
+  </span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg>Update (158)</span></div></a><a
   class="card"
   href="/FreeCAD-Website/pt/news/wip-wednesday-20-november-2024/"><div class="card-color" style="--hue: 120;"></div><h3 class="card-title">WIP Wednesday - 20 November 2024</h3><div class="card-metadata"><span class="meta"><svg
     class="icon date"
@@ -334,8 +360,12 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
   </svg><time datetime="2024-11-20T00:00:00Z">20 de novembro de 2024</time>
-  </span></div>
-</a><a
+  </span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg>Update (158)</span></div></a><a
   class="card"
   href="/FreeCAD-Website/pt/news/freecad-version-1-0-released/"><figure class="thumbnail"><img
     class="img motor"
@@ -349,8 +379,12 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
   </svg><time datetime="2024-11-19T00:00:00Z">19 de novembro de 2024</time>
-  </span></div>
-</a><a
+  </span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg>Announcement (94)</span></div></a><a
   class="card"
   href="/FreeCAD-Website/pt/news/new-grants-varsets-mediawiki-artwork-guidelines-and-icons/"><div class="card-color" style="--hue: 20;"></div><h3 class="card-title">New Grants - VarSets, Mediawiki, artwork guidelines and icons</h3><div class="card-metadata"><span class="meta"><svg
     class="icon date"
@@ -358,8 +392,12 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
   </svg><time datetime="2024-11-18T00:00:00Z">18 de novembro de 2024</time>
-  </span></div>
-</a><a
+  </span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg>Announcement (94)</span></div></a><a
   class="card"
   href="/FreeCAD-Website/pt/news/freecad-1-0-release-candidate-4-is-out/"><div class="card-color" style="--hue: 20;"></div><h3 class="card-title">FreeCAD 1.0 Release Candidate 4 is out</h3><div class="card-metadata"><span class="meta"><svg
     class="icon date"
@@ -367,8 +405,12 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
   </svg><time datetime="2024-11-14T00:00:00Z">14 de novembro de 2024</time>
-  </span></div>
-</a></div><nav
+  </span><span class="meta category"><svg
+    class="icon category"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg>Announcement (94)</span></div></a></div><nav
           aria-label="Pagination"
           class="pagination"><a
                 href="/FreeCAD-Website/pt/news/"
@@ -429,37 +471,25 @@
             href="/FreeCAD-Website/pt/features/">Funcionalidades</a><ul></ul></li><li>
           <a
             href="/FreeCAD-Website/pt/download/">Baixar</a><ul><li>
+                  <a
+                    href="/FreeCAD-Website/pt/releases/">Releases</a>
+                </li><li>
                       <a
-                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development builds<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
+                        href="/FreeCAD-Website/pt/download/addons/">Addons</a>
                     </li><li>
                       <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples an parts library<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
-                      <a
-                        href="/FreeCAD-Website/pt/download/releases/">Releases</a>
+                        href="/FreeCAD-Website/pt/download/unstable/">Unstable</a>
                     </li></ul></li><li>
           <a
             href="/FreeCAD-Website/pt/news/" aria-current="page" class="active">Atualidades</a><ul><li>
                   <a
                     href="/FreeCAD-Website/pt/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/FreeCAD-Website/pt/authors/">Autores</a>
+                        <a href="/FreeCAD-Website/pt/author/">Autor</a>
                       </li><li>
-                        <a href="/FreeCAD-Website/pt/categories/">Categorias</a>
+                        <a href="/FreeCAD-Website/pt/category/">Categoria</a>
                       </li><li>
                         <a href="/FreeCAD-Website/pt/tags/">Tags</a>
-                      </li><li>
-                        <a href="/FreeCAD-Website/pt/versions/">Versões</a>
                       </li></ul></li><li>
           <a
             href="/FreeCAD-Website/pt/community/">Comunidade</a><ul><li>
@@ -483,10 +513,20 @@
   </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/pt/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/pt/community/addons/">Addons</a>
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="/FreeCAD-Website/pt/community/telemetry/">Telemetry</a>
@@ -494,7 +534,7 @@
           <a
             href="/FreeCAD-Website/pt/docs/">Documentação</a><ul><li>
                   <a
-                    href="https://wiki.freecad.org/User_hub" target="_blank" rel="external noreferrer nofollow">User manual<svg
+                    href="https://wiki.freecad.org/User_hub/pt" target="_blank" rel="external noreferrer nofollow">User manual<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
@@ -548,6 +588,14 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/mastodon.svg#mastodon"></use>
   </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
     target="_blank" rel="external noreferrer nofollow"><svg
@@ -579,6 +627,14 @@
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://maxwxyz.github.io/FreeCAD-Website/pt/index.xml"
+    type="application/rss&#43;xml"
+    title="RSS feed"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/rss.svg#rss"></use>
   </svg></a></div><div class="copyright"><span>
     &copy; 2026
     <a

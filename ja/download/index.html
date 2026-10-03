@@ -27,26 +27,23 @@
   </style><style>
       @media (prefers-color-scheme: dark) {
         :root {
-          --header: rgb(16, 16, 16);
-          --theme: rgb(32, 32, 32);
-          --entry: rgb(48, 48, 48);
+          --header: rgb(8, 8, 8);
+          --theme: rgb(16, 16, 16);
+          --entry: rgb(32, 32, 32);
           --tone: rgb(64, 64, 64);
-          --footer: rgb(80, 80, 80);
+          --backdrop: rgba(64, 64, 64, 0.8);
           --primary: rgb(240, 240, 240);
           --secondary: rgb(224, 224, 224);
           --tertiary: rgb(208, 208, 208);
-          --backdrop: rgba(0, 0, 0, 0.8);
-          --backdrop: rgba(0, 0, 0, 0.75);
-          --accent: rgb(102, 177, 255);
-          --accent-hover: rgb(65, 143, 222);
-          --underline: underline solid currentColor var(--line);
-          --border: var(--line) solid var(--tone);
+          --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+          --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+          --angle: 315deg;
         }
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/FreeCAD-Website/css/styles.cb71b36b5732d30ca23c01d073b3e202fee816532c3843c6b985ab0d743f3dc2.css"
-          integrity="sha256-y3Gza1cy0wyiPAHQc7PiAv7oFlMsOEPGuYWrDXQ/PcI="
+          href="/FreeCAD-Website/css/styles.ba4e0c8246fe032f190f1dac870eb9b1043660e412e761656abaa036a978d511.css"
+          integrity="sha256-uk4Mgkb&#43;Ay8ZDx2shw65sQQ2YOQS52FlarqgNql41RE="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -55,7 +52,11 @@
       type="image/x-icon"
       href="/FreeCAD-Website/favicon.ico"><link
       rel="apple-touch-icon"
-      href="/FreeCAD-Website/apple-touch-icon.png"><title>FreeCAD | Download</title>
+      href="/FreeCAD-Website/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://maxwxyz.github.io/FreeCAD-Website/ja/index.xml"
+    title="FreeCAD"><title>FreeCAD | Download</title>
   <meta
     name="description"
     content="Get FreeCAD and start with freedom right away."><meta
@@ -102,19 +103,19 @@
 </div>
 <header class="site-header">
 
-  <div class="logo">
-    <a
-      href="/FreeCAD-Website/ja/"
-      accesskey="h"
-      title="ホームページ (Alt + H)"
-      aria-label="ホームページ"><svg
+  <a
+    class="logo"
+    href="/FreeCAD-Website/ja/"
+    accesskey="h"
+    title="ホームページ (Alt + H)"
+    aria-label="ホームページ">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/FreeCAD-Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/FreeCAD-Website/wordmark.svg#wordmark"></use>
     </svg></a>
-  </div>
 
   <div class="site-nav"><nav class="menu">
   <button
@@ -156,7 +157,7 @@
             href="/FreeCAD-Website/ja/docs/">ドキュメント</a>
         </li><li>
           <a
-            href="/FreeCAD-Website/ja/donate/" class="donate-button">♥ 寄付する</a>
+            href="/FreeCAD-Website/ja/donate/" class="button donate">♥ 寄付する</a>
         </li></ul>
 </nav>
 <div class="language-dropdown">
@@ -207,101 +208,200 @@
     <use href="/FreeCAD-Website/svg/light.svg#light"></use>
   </svg></button>
 </div></div>
-</header><main style="--hue: 30;"><section class="hero">
+</header><main style="--hue: 20;"><section class="hero">
 
-    <h1 class="title">Launch into design!</h1><h3 class="description">Get FreeCAD and start with freedom right away.</h3><h4 class="description">ダウンロード 1.1.1 · 2026年4月14日</h4>
+    <h1 class="title">Launch into design!</h1><h3 class="description">Get FreeCAD and start with freedom right away.</h3><p class="release-title">
+      <strong>ダウンロード 1.1.4</strong>
+      <span>2026年9月28日</span>
+    </p>
 
     <div class="download-box"><div
-          class="download-card"
-          id="windows"
-          style="order: 1;">
+            class="download-card"
+            id="windows"
+            style="order: 1;">
 
-          <div class="download-platform"><svg
+            <div class="download-platform"><svg
     class="icon windows"
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/windows.svg#windows"></use>
-  </svg><h3>Windows</h3><p>Windows 10&#43;</p></div><div class="download-buttons"><a class="button download-link"
-                    href="https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-Windows-x86_64-py311-installer.exe"
-                    target="_blank"
-                    rel="external noreferrer nofollow"><svg
-    class="icon download"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/download.svg#download"></use>
-  </svg><strong>Installer</strong><span>x86-64</span></a><a class="button download-link"
-                    href="https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-Windows-x86_64-py311.7z"
-                    target="_blank"
-                    rel="external noreferrer nofollow"><svg
-    class="icon download"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/download.svg#download"></use>
-  </svg><strong>Portable</strong><span>x86-64</span></a></div></div><div
-          class="download-card"
-          id="mac"
-          style="order: 2;">
+  </svg><h3>Windows</h3><p>Windows 10&#43;</p></div>
 
-          <div class="download-platform"><svg
+            <div class="download-buttons"><div class="button">
+                    <a
+                      class="link-donate"
+                      href="https://github.com/FreeCAD/FreeCAD/releases/download/1.1.4/FreeCAD_1.1.4-Windows-x86_64-py311-installer.exe"
+                      title="ダウンロード FreeCAD_1.1.4-Windows-x86_64-py311-installer.exe"
+                      target="_blank"
+                      rel="external noreferrer nofollow"><svg
+    class="icon download"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/download.svg#download"></use>
+  </svg><strong>64-bit Installer</strong>
+                      <span>495.3 MB</span>
+                    </a>
+                      <button
+                        class="checksum-button"
+                        data-sha256="845f7101d33faf257a82a0cadc5f4f3804441f46ee493eb32b92fcf9c7147a24"
+                        data-title="Copy SHA-256 checksum to clipboard"
+                        title="Copy SHA-256 checksum to clipboard"
+                        aria-label="Copy SHA-256 checksum to clipboard"><svg
+    class="icon checksum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/checksum.svg#checksum"></use>
+  </svg></button>
+                  </div><div class="button">
+                    <a
+                      class="link-donate"
+                      href="https://github.com/FreeCAD/FreeCAD/releases/download/1.1.4/FreeCAD_1.1.4-Windows-x86_64-py311.7z"
+                      title="ダウンロード FreeCAD_1.1.4-Windows-x86_64-py311.7z"
+                      target="_blank"
+                      rel="external noreferrer nofollow"><svg
+    class="icon download"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/download.svg#download"></use>
+  </svg><strong>64-bit Portable</strong>
+                      <span>398.7 MB</span>
+                    </a>
+                      <button
+                        class="checksum-button"
+                        data-sha256="4828741fc91ee37fafcdb97a1abacb18b04ba451ac4372d9ff7a7349b36f4d6d"
+                        data-title="Copy SHA-256 checksum to clipboard"
+                        title="Copy SHA-256 checksum to clipboard"
+                        aria-label="Copy SHA-256 checksum to clipboard"><svg
+    class="icon checksum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/checksum.svg#checksum"></use>
+  </svg></button>
+                  </div></div></div><div
+            class="download-card"
+            id="mac"
+            style="order: 2;">
+
+            <div class="download-platform"><svg
     class="icon mac"
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/mac.svg#mac"></use>
-  </svg><h3>macOS</h3><p>macOS 12&#43; Monterey</p></div><div class="download-buttons"><a class="button download-link"
-                    href="https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-macOS-x86_64-py311.dmg"
-                    target="_blank"
-                    rel="external noreferrer nofollow"><svg
-    class="icon download"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/download.svg#download"></use>
-  </svg><strong>Intel</strong><span>x86-64</span></a><a class="button download-link"
-                    href="https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-macOS-arm64-py311.dmg"
-                    target="_blank"
-                    rel="external noreferrer nofollow"><svg
-    class="icon download"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/download.svg#download"></use>
-  </svg><strong>Apple Silicon</strong><span>arm64</span></a></div></div><div
-          class="download-card"
-          id="linux"
-          style="order: 3;">
+  </svg><h3>macOS</h3><p>macOS 12&#43; Monterey</p></div>
 
-          <div class="download-platform"><svg
+            <div class="download-buttons"><div class="button">
+                    <a
+                      class="link-donate"
+                      href="https://github.com/FreeCAD/FreeCAD/releases/download/1.1.4/FreeCAD_1.1.4-macOS-arm64-py311.dmg"
+                      title="ダウンロード FreeCAD_1.1.4-macOS-arm64-py311.dmg"
+                      target="_blank"
+                      rel="external noreferrer nofollow"><svg
+    class="icon download"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/download.svg#download"></use>
+  </svg><strong>Apple Silicon</strong>
+                      <span>619.7 MB</span>
+                    </a>
+                      <button
+                        class="checksum-button"
+                        data-sha256="071343b4abb70492b75c973f41eaf1d2528f9b9c7ea018d22a4f46ae14d27ac0"
+                        data-title="Copy SHA-256 checksum to clipboard"
+                        title="Copy SHA-256 checksum to clipboard"
+                        aria-label="Copy SHA-256 checksum to clipboard"><svg
+    class="icon checksum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/checksum.svg#checksum"></use>
+  </svg></button>
+                  </div><div class="button">
+                    <a
+                      class="link-donate"
+                      href="https://github.com/FreeCAD/FreeCAD/releases/download/1.1.4/FreeCAD_1.1.4-macOS-x86_64-py311.dmg"
+                      title="ダウンロード FreeCAD_1.1.4-macOS-x86_64-py311.dmg"
+                      target="_blank"
+                      rel="external noreferrer nofollow"><svg
+    class="icon download"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/download.svg#download"></use>
+  </svg><strong>Intel Disk Image</strong>
+                      <span>686.7 MB</span>
+                    </a>
+                      <button
+                        class="checksum-button"
+                        data-sha256="e173d0dcf47a5166b59cbb33adccf54cd751eb9ceaa2c86486230d0d079648c1"
+                        data-title="Copy SHA-256 checksum to clipboard"
+                        title="Copy SHA-256 checksum to clipboard"
+                        aria-label="Copy SHA-256 checksum to clipboard"><svg
+    class="icon checksum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/checksum.svg#checksum"></use>
+  </svg></button>
+                  </div></div></div><div
+            class="download-card"
+            id="linux"
+            style="order: 3;">
+
+            <div class="download-platform"><svg
     class="icon linux"
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/linux.svg#linux"></use>
-  </svg><h3>GNU/Linux</h3><p>Multiple Distributions</p></div><div class="download-buttons"><a class="button download-link"
-                    href="https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-Linux-x86_64-py311.AppImage"
-                    target="_blank"
-                    rel="external noreferrer nofollow"><svg
+  </svg><h3>GNU/Linux</h3><p>All distributions</p></div>
+
+            <div class="download-buttons"><div class="button">
+                    <a
+                      class="link-donate"
+                      href="https://github.com/FreeCAD/FreeCAD/releases/download/1.1.4/FreeCAD_1.1.4-Linux-aarch64-py311.AppImage"
+                      title="ダウンロード FreeCAD_1.1.4-Linux-aarch64-py311.AppImage"
+                      target="_blank"
+                      rel="external noreferrer nofollow"><svg
     class="icon download"
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/download.svg#download"></use>
-  </svg><strong>x86-64 AppImage</strong><span>amd64</span></a><a class="button download-link"
-                    href="https://github.com/freecad/freecad/releases/download/1.1.1/FreeCAD_1.1.1-Linux-aarch64-py311.AppImage"
-                    target="_blank"
-                    rel="external noreferrer nofollow"><svg
+  </svg><strong>aarch64 AppImage</strong>
+                      <span>720.6 MB</span>
+                    </a>
+                      <button
+                        class="checksum-button"
+                        data-sha256="675d1a4295b2183e0e1d816a4b5557dcb63aeced4e60aaa28d6c3686f4c71dc9"
+                        data-title="Copy SHA-256 checksum to clipboard"
+                        title="Copy SHA-256 checksum to clipboard"
+                        aria-label="Copy SHA-256 checksum to clipboard"><svg
+    class="icon checksum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/checksum.svg#checksum"></use>
+  </svg></button>
+                  </div><div class="button">
+                    <a
+                      class="link-donate"
+                      href="https://github.com/FreeCAD/FreeCAD/releases/download/1.1.4/FreeCAD_1.1.4-Linux-x86_64-py311.AppImage"
+                      title="ダウンロード FreeCAD_1.1.4-Linux-x86_64-py311.AppImage"
+                      target="_blank"
+                      rel="external noreferrer nofollow"><svg
     class="icon download"
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/download.svg#download"></use>
-  </svg><strong>AArch64 AppImage</strong><span>arm64</span></a></div></div></div>
-
-    <script>
-    const DONATE_PAGE = '\/FreeCAD-Website\/ja\/donate\/';
-
-    document.querySelectorAll('.download-link').forEach(link => {
-      link.addEventListener('click', () => {
-        setTimeout(() => {
-          window.location.assign(DONATE_PAGE);
-        }, 1500);
-      });
-    });
-    </script></section>
+  </svg><strong>x86 AppImage</strong>
+                      <span>782.8 MB</span>
+                    </a>
+                      <button
+                        class="checksum-button"
+                        data-sha256="f6dc6ba676e5ac96a565ebc8d657232f94c6158e85b4352141bd1a46f6b43434"
+                        data-title="Copy SHA-256 checksum to clipboard"
+                        title="Copy SHA-256 checksum to clipboard"
+                        aria-label="Copy SHA-256 checksum to clipboard"><svg
+    class="icon checksum"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/checksum.svg#checksum"></use>
+  </svg></button>
+                  </div></div></div></div></section>
 
   <div class="content"><figure>
   <blockquote class="note"><svg
@@ -317,7 +417,7 @@
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a></p></blockquote></figure><div class="block-shortcode wide section"><div class="block-content"><div class="group"><h2
+  </svg></a></p></blockquote></figure><div class="block-shortcode wide dots"><div class="block-content"><div class="group"><h2
   id="whats-new-in-the-latest-release">What&rsquo;s New in the Latest Release<a class="heading-anchor"
      href="#whats-new-in-the-latest-release"
      title="What&rsquo;s New in the Latest Release"><svg
@@ -326,47 +426,108 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/anchor.svg#anchor"></use>
   </svg></a>
-</h2><p>FreeCAD 1.1 focuses on refinement and key features to enhance workflow and stability for everyone.
-With many quality of life improvements to all workbenches, hundreds of bug fixes, and updated libraries,
-designing with FreeCAD is more fun and powerful than ever. Oh, full freedom included by the way.</p>
+</h2><p>The latest FreeCAD release focuses on refinement and key features to enhance workflows and stability for everyone.
+With many quality of life improvements, hundreds of bug fixes, and updated libraries, designing with FreeCAD is more fun and powerful than ever.</p>
 </div>
 <div>
     <div
       class="cards" style="padding: 0;"><a
   class="card"
-  href="/FreeCAD-Website/ja/download/releases/1-1/"><figure class="thumbnail"><img
-    class="img relnotes_1-1"
-    src="/FreeCAD-Website/download/releases/1-1/relnotes_1-1.webp"
-    alt="FreeCAD 1.1 Notes"
-    loading="lazy"
-    fetchpriority="low"
-    decoding="async" width="1280" height="720" srcset="/FreeCAD-Website/download/releases/1-1/relnotes_1-1_hu_12982a451188f910.webp 400w, /FreeCAD-Website/download/releases/1-1/relnotes_1-1_hu_44b7a83c9d1a0b47.webp 800w, /FreeCAD-Website/download/releases/1-1/relnotes_1-1.webp 1280w" sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, 95vw"></figure><h3 class="card-title">FreeCAD 1.1 Notes</h3><p class="card-description">Free and open-source CAD, refined.</p><div class="card-metadata"><span class="meta"><svg
+  href="/FreeCAD-Website/ja/releases/26-3/"><div class="card-color" style="--hue: 10;"></div><h3 class="card-title">FreeCAD 26.3 Notes</h3><p class="card-description">Fresh release cadence, many improved workflows, same freedom to design.</p><div class="card-metadata"><span class="meta"><svg
     class="icon date"
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
-  </svg><time datetime="2026-03-24T00:00:00Z">2026年3月24日</time>
-  </span></div>
-</a></div>
+  </svg><time datetime="2026-09-01T00:00:00Z">2026年9月1日</time>
+  </span></div></a></div>
   </div></div>
   </div>
-<div class="block-shortcode wide"><div class="block-content"><div class="group"><div class="button-shortcode">
-    <a
-      href="https://github.com/FreeCAD/FreeCAD"
-      title="FreeCAD code"
-      class="button" target="_blank" rel="external noreferrer nofollow"><svg
-    class="icon code"
+<div class="block-shortcode wide pastel4"><div class="block-content"><div class="card-shortcode"><a
+  class="card"
+  href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow"><div class="card-color" style="--hue: 40;"><span class="card-icon"><svg
+    class="icon folder_open"
     aria-hidden="true"
     focusable="false">
-    <use href="/FreeCAD-Website/svg/code.svg#code"></use>
-  </svg>FreeCAD code<svg
+    <use href="/FreeCAD-Website/svg/folder_open.svg#folder_open"></use>
+  </svg></span></div><h3 class="card-title">Examples and Parts Library<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></h3><p class="card-description">Get assets and FreeCAD files to start in no time.</p><div class="card-metadata"></div></a></div>
+<div class="group"><h2
+  id="examples-and-parts-library" class="pastel4">Examples and Parts Library<a class="heading-anchor"
+     href="#examples-and-parts-library"
+     title="Examples and Parts Library"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/anchor.svg#anchor"></use>
   </svg></a>
+</h2><div class="marker"><span><svg
+    class="icon folder_open"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/folder_open.svg#folder_open"></use>
+  </svg></span><span>Assets</span></div>
+<p>The FreeCAD community provides a wealth of file examples, part libraries, templates and various assets.</p>
+</div></div>
   </div>
-<h2
+<div class="block-shortcode wide pastel6"><div class="block-content"><div class="group"><h2
+  id="additional-modules-and-macros" class="pastel6">Additional modules and macros<a class="heading-anchor"
+     href="#additional-modules-and-macros"
+     title="Additional modules and macros"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><div class="marker"><span><svg
+    class="icon puzzle"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/puzzle.svg#puzzle"></use>
+  </svg></span><span>Addons</span></div>
+<p>The FreeCAD community provides many additional features, workbenches, macros, and interface themes.
+They can easily be installed directly from within FreeCAD using the Addon Manager.</p>
+</div>
+<div class="card-shortcode"><a
+  class="card"
+  href="/FreeCAD-Website/ja/download/addons/"><div class="card-color" style="--hue: 50;"><span class="card-icon"><svg
+    class="icon puzzle"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/puzzle.svg#puzzle"></use>
+  </svg></span></div><h3 class="card-title">Addons</h3><p class="card-description">Explore FreeCAD ecosystem and take advantage of specialized tools.</p><div class="card-metadata"></div></a></div></div>
+  </div>
+<div class="block-shortcode wide pastel5"><div class="block-content"><div class="card-shortcode"><a
+  class="card"
+  href="/FreeCAD-Website/ja/download/unstable/"><div class="card-color" style="--hue: 60;"><span class="card-icon"><svg
+    class="icon test"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/test.svg#test"></use>
+  </svg></span></div><h3 class="card-title">Unstable Development Builds</h3><p class="card-description">FreeCAD evolves every day. Test the very latest changes, fixes, and features.</p><div class="card-metadata"></div></a></div>
+<div class="group"><h2
+  id="go-experimental" class="pastel5">Go experimental<a class="heading-anchor"
+     href="#go-experimental"
+     title="Go experimental"><svg
+    class="icon anchor"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/anchor.svg#anchor"></use>
+  </svg></a>
+</h2><div class="marker"><span><svg
+    class="icon test"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/test.svg#test"></use>
+  </svg></span><span>Unstable</span></div>
+<p>FreeCAD evolves every day. Test the very latest changes, fixes, and features.</p>
+<p><em><strong>Not recommended for production!</strong></em></p>
+</div></div>
+  </div>
+<div class="block-shortcode wide section"><div class="block-content"><div class="group"><h2
   id="see-the-source-code-its-open" class="accent">See the source code, it&rsquo;s open!<a class="heading-anchor"
      href="#see-the-source-code-its-open"
      title="See the source code, it&rsquo;s open!"><svg
@@ -375,28 +536,34 @@ designing with FreeCAD is more fun and powerful than ever. Oh, full freedom incl
     focusable="false">
     <use href="/FreeCAD-Website/svg/anchor.svg#anchor"></use>
   </svg></a>
-</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</div>
-<div class="group"><h2
-  id="additional-modules-and-macros" class="accent">Additional modules and macros<a class="heading-anchor"
-     href="#additional-modules-and-macros"
-     title="Additional modules and macros"><svg
-    class="icon anchor"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/anchor.svg#anchor"></use>
-  </svg></a>
-</h2><p>The FreeCAD community provides a wealth of additional workbenches, macros, interface themes, templates and various assets. They can easily be installed directly from within FreeCAD using the Addon Manager.</p>
+</h2><p>FreeCAD is free and open source software under the LGPL-2.0-or-later license.
+Explore the code, understand how it works, contribute improvements, and help shape the future of free, open, and parametric 3D design.</p>
 <div class="button-shortcode">
     <a
-      href="https://wiki.freecad.org/Std_AddonMgr"
-      title="Addon Manager"
+      href="https://github.com/FreeCAD/FreeCAD"
+      title="FreeCAD code on GitHub"
       class="button" target="_blank" rel="external noreferrer nofollow"><svg
-    class="icon puzzle"
+    class="icon github"
     aria-hidden="true"
     focusable="false">
-    <use href="/FreeCAD-Website/svg/puzzle.svg#puzzle"></use>
-  </svg>Addon Manager<svg
+    <use href="/FreeCAD-Website/svg/github.svg#github"></use>
+  </svg>FreeCAD code on GitHub<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
+  </div>
+<div class="button-shortcode">
+    <a
+      href="https://codeberg.org/FreeCAD/FreeCAD"
+      title="FreeCAD code on Codeberg"
+      class="button" target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon codeberg"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/codeberg.svg#codeberg"></use>
+  </svg>FreeCAD code on Codeberg<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
@@ -404,42 +571,7 @@ designing with FreeCAD is more fun and powerful than ever. Oh, full freedom incl
   </svg></a>
   </div></div></div>
   </div>
-</div><div class="card-list wide">
-    <div class="cards"><a
-  class="card"
-  href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow"><div class="card-color" style="--hue: 40;"><span class="card-icon"><svg
-    class="icon download"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/download.svg#download"></use>
-  </svg></span></div><h3 class="card-title">Development builds<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></h3><p class="card-description">Test the very latest features and changes.</p><div class="card-metadata"></div>
-</a><a
-  class="card"
-  href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow"><div class="card-color" style="--hue: 50;"><span class="card-icon"><svg
-    class="icon folder_open"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/folder_open.svg#folder_open"></use>
-  </svg></span></div><h3 class="card-title">Examples an parts library<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></h3><p class="card-description">Get assets and FreeCAD files to start in no time.</p><div class="card-metadata"></div>
-</a><a
-  class="card"
-  href="/FreeCAD-Website/ja/download/releases/"><div class="card-color" style="--hue: 60;"><span class="card-icon"><svg
-    class="icon time"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/time.svg#time"></use>
-  </svg></span></div><h3 class="card-title">All release notes</h3><p class="card-description">Browse back in time previous releases.</p><div class="card-metadata"></div>
-</a></div></div></main><footer class="site-footer"><a id="top-link"
+</div></main><footer class="site-footer"><a id="top-link"
   href="#top"
   accesskey="g"
   aria-label="トップへ"
@@ -456,37 +588,25 @@ designing with FreeCAD is more fun and powerful than ever. Oh, full freedom incl
             href="/FreeCAD-Website/ja/features/">特徴</a><ul></ul></li><li>
           <a
             href="/FreeCAD-Website/ja/download/" aria-current="page" class="active">ダウンロード</a><ul><li>
+                  <a
+                    href="/FreeCAD-Website/ja/releases/">Releases</a>
+                </li><li>
                       <a
-                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development builds<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
+                        href="/FreeCAD-Website/ja/download/addons/">Addons</a>
                     </li><li>
                       <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples an parts library<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
-                      <a
-                        href="/FreeCAD-Website/ja/download/releases/">Releases</a>
+                        href="/FreeCAD-Website/ja/download/unstable/">Unstable</a>
                     </li></ul></li><li>
           <a
             href="/FreeCAD-Website/ja/news/">ニュース</a><ul><li>
                   <a
                     href="/FreeCAD-Website/ja/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/FreeCAD-Website/ja/authors/">著者一覧</a>
+                        <a href="/FreeCAD-Website/ja/author/">著者</a>
                       </li><li>
-                        <a href="/FreeCAD-Website/ja/categories/">カテゴリ一覧</a>
+                        <a href="/FreeCAD-Website/ja/category/">カテゴリ</a>
                       </li><li>
                         <a href="/FreeCAD-Website/ja/tags/">タグ一覧</a>
-                      </li><li>
-                        <a href="/FreeCAD-Website/ja/versions/">バージョン一覧</a>
                       </li></ul></li><li>
           <a
             href="/FreeCAD-Website/ja/community/">コミュニティ</a><ul><li>
@@ -510,10 +630,20 @@ designing with FreeCAD is more fun and powerful than ever. Oh, full freedom incl
   </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/ja/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/ja/community/addons/">Addons</a>
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="/FreeCAD-Website/ja/community/telemetry/">Telemetry</a>
@@ -521,7 +651,7 @@ designing with FreeCAD is more fun and powerful than ever. Oh, full freedom incl
           <a
             href="/FreeCAD-Website/ja/docs/">ドキュメント</a><ul><li>
                   <a
-                    href="https://wiki.freecad.org/User_hub" target="_blank" rel="external noreferrer nofollow">User manual<svg
+                    href="https://wiki.freecad.org/User_hub/ja" target="_blank" rel="external noreferrer nofollow">User manual<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
@@ -575,6 +705,14 @@ designing with FreeCAD is more fun and powerful than ever. Oh, full freedom incl
     focusable="false">
     <use href="/FreeCAD-Website/svg/mastodon.svg#mastodon"></use>
   </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
     target="_blank" rel="external noreferrer nofollow"><svg
@@ -606,6 +744,14 @@ designing with FreeCAD is more fun and powerful than ever. Oh, full freedom incl
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://maxwxyz.github.io/FreeCAD-Website/ja/index.xml"
+    type="application/rss&#43;xml"
+    title="RSS feed"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/rss.svg#rss"></use>
   </svg></a><a
   href="/FreeCAD-Website/ja/fedishare.html#title=Launch&#43;into&#43;design%21&amp;description=Get%20FreeCAD%20and%20start%20with%20freedom%20right%20away.&amp;url=https://maxwxyz.github.io/FreeCAD-Website/ja/download/"
   title="共有 Fediverse"
@@ -649,9 +795,9 @@ designing with FreeCAD is more fun and powerful than ever. Oh, full freedom incl
   </svg></a>
 </span>
 <span>
-    Modified: 2026-06-26
+    Modified: 2026-09-24
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/f7747eb3974afdad15458e218a931f99df0e201f">f7747eb<svg
+      Commit: <a href="https://github.com/freecad/website/commit/61f966d3e9456cfb79ec6c108ec6d925ef95c5d5">61f966d3<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
@@ -662,6 +808,14 @@ designing with FreeCAD is more fun and powerful than ever. Oh, full freedom incl
     src="/FreeCAD-Website/js/chroma.min.842573af8008a7246a70331c3c4b782f52a0cf1996a73da7671c3f342987bb46.js"
     type="text/javascript"
     defer integrity="sha256-hCVzr4AIpyRqcDMcPEt4L1KgzxmWpz2nZxw/NCmHu0Y=" crossorigin="anonymous">
+  </script><script
+    src="/FreeCAD-Website/js/checksum.min.59a2e28e4dc9c4bbdfb432a0a4f8541373e5ac3df1523826096165f0647cbaf8.js"
+    type="text/javascript"
+    defer integrity="sha256-WaLijk3JxLvftDKgpPhUE3PlrD3xUjgmCWFl8GR8uvg=" crossorigin="anonymous">
+  </script><script
+    src="/FreeCAD-Website/js/ja/redirect_to_donate.min.71dca9fed6e197f517e33048b0d7806bf1c9cd518365f0a7a251171a461952a1.js"
+    type="text/javascript"
+    defer integrity="sha256-cdyp/tbhl/UX4zBIsNeAa/HJzVGDZfCnolEXGkYZUqE=" crossorigin="anonymous">
   </script></body>
 
 </html>

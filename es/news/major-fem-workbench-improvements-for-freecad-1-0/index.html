@@ -27,26 +27,23 @@
   </style><style>
       @media (prefers-color-scheme: dark) {
         :root {
-          --header: rgb(16, 16, 16);
-          --theme: rgb(32, 32, 32);
-          --entry: rgb(48, 48, 48);
+          --header: rgb(8, 8, 8);
+          --theme: rgb(16, 16, 16);
+          --entry: rgb(32, 32, 32);
           --tone: rgb(64, 64, 64);
-          --footer: rgb(80, 80, 80);
+          --backdrop: rgba(64, 64, 64, 0.8);
           --primary: rgb(240, 240, 240);
           --secondary: rgb(224, 224, 224);
           --tertiary: rgb(208, 208, 208);
-          --backdrop: rgba(0, 0, 0, 0.8);
-          --backdrop: rgba(0, 0, 0, 0.75);
-          --accent: rgb(102, 177, 255);
-          --accent-hover: rgb(65, 143, 222);
-          --underline: underline solid currentColor var(--line);
-          --border: var(--line) solid var(--tone);
+          --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+          --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+          --angle: 315deg;
         }
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/FreeCAD-Website/css/styles.cb71b36b5732d30ca23c01d073b3e202fee816532c3843c6b985ab0d743f3dc2.css"
-          integrity="sha256-y3Gza1cy0wyiPAHQc7PiAv7oFlMsOEPGuYWrDXQ/PcI="
+          href="/FreeCAD-Website/css/styles.ba4e0c8246fe032f190f1dac870eb9b1043660e412e761656abaa036a978d511.css"
+          integrity="sha256-uk4Mgkb&#43;Ay8ZDx2shw65sQQ2YOQS52FlarqgNql41RE="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -55,7 +52,11 @@
       type="image/x-icon"
       href="/FreeCAD-Website/favicon.ico"><link
       rel="apple-touch-icon"
-      href="/FreeCAD-Website/apple-touch-icon.png"><title>FreeCAD | Major FEM Workbench improvements for FreeCAD 1.0</title>
+      href="/FreeCAD-Website/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://maxwxyz.github.io/FreeCAD-Website/es/index.xml"
+    title="FreeCAD"><title>FreeCAD | Major FEM Workbench improvements for FreeCAD 1.0</title>
   <meta
     name="description"
     content="Tu propio modelador paramétrico libre y de código abierto"><meta
@@ -94,7 +95,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2024-09-28T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-05-05T08:11:44+02:00">
+    <meta property="article:modified_time" content="2026-09-23T13:25:40+02:00">
     <meta property="article:tag" content="FEM">
 </head><body
     class="single type-news kind-page "
@@ -106,19 +107,19 @@
 </div>
 <header class="site-header">
 
-  <div class="logo">
-    <a
-      href="/FreeCAD-Website/es/"
-      accesskey="h"
-      title="Inicio (Alt + H)"
-      aria-label="Inicio"><svg
+  <a
+    class="logo"
+    href="/FreeCAD-Website/es/"
+    accesskey="h"
+    title="Inicio (Alt + H)"
+    aria-label="Inicio">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/FreeCAD-Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/FreeCAD-Website/wordmark.svg#wordmark"></use>
     </svg></a>
-  </div>
 
   <div class="site-nav"><nav class="menu">
   <button
@@ -160,7 +161,7 @@
             href="/FreeCAD-Website/es/docs/">Documentación</a>
         </li><li>
           <a
-            href="/FreeCAD-Website/es/donate/" class="donate-button">♥ Donar</a>
+            href="/FreeCAD-Website/es/donate/" class="button donate">♥ Donar</a>
         </li></ul>
 </nav>
 <div class="language-dropdown">
@@ -219,17 +220,17 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
   </svg><time datetime="2024-09-28T00:00:00Z">28 de septiembre de 2024</time>
-  </span><span class="meta authors"><svg
-    class="icon authors"
+  </span><span class="meta author"><svg
+    class="icon author"
     aria-hidden="true"
     focusable="false">
-    <use href="/FreeCAD-Website/svg/authors.svg#authors"></use>
-  </svg><a href="/FreeCAD-Website/es/authors/newjoker/">NewJoker (3)</a></span><span class="meta categories"><svg
-    class="icon categories"
+    <use href="/FreeCAD-Website/svg/author.svg#author"></use>
+  </svg><a href="/FreeCAD-Website/es/author/newjoker/">NewJoker (3)</a></span><span class="meta category"><svg
+    class="icon category"
     aria-hidden="true"
     focusable="false">
-    <use href="/FreeCAD-Website/svg/categories.svg#categories"></use>
-  </svg><a href="/FreeCAD-Website/es/categories/announcement/">Announcement (94)</a></span><span class="meta tags"><svg
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg><a href="/FreeCAD-Website/es/category/announcement/">Announcement (94)</a></span><span class="meta tags"><svg
     class="icon tags"
     aria-hidden="true"
     focusable="false">
@@ -263,7 +264,7 @@
     <use href="/FreeCAD-Website/svg/external.svg#external"></use>
   </svg></a> were fixed. This includes many bugs - some of them serious and long-standing - but also completely new features and various small usability improvements. I&rsquo;ve been maintaining the FEM workbench for almost a year. In this post, I&rsquo;d like to outline some of the most important new features coming in FreeCAD 1.0 soon.</p>
 <p>The biggest new FEM feature is <a
-  href="https://wiki.freecad.org/FEM_ConstraintRigidBody"
+  href="https://wiki.freecad.org/FEM_ConstraintRigidBody/es"
   class="external-link" target="_blank" rel="external noreferrer nofollow">ConstraintRigidBody<svg
     class="icon external"
     aria-hidden="true"
@@ -302,7 +303,7 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/cross.svg#cross"></use>
   </svg></button><p>Beam torsion analysis</p></div><figcaption>Beam torsion analysis</figcaption></figure><p>The second major change is the introduction of 2D analyses with CalculiX. That includes plane stress (for very thin parts with in-plane loads), plane strain (for very thick parts with in-plane loads), and axis symmetry (for revolved parts with loads uniform around the circumference). The analyses can be performed by just following the approach for analyses with shell elements (but using only the XY plane) and changing the <code>Model Space</code> property of the <a
-  href="https://wiki.freecad.org/FEM_SolverCalculixCxxtools"
+  href="https://wiki.freecad.org/FEM_SolverCalculixCxxtools/es"
   class="external-link" target="_blank" rel="external noreferrer nofollow">CalculiX solver<svg
     class="icon external"
     aria-hidden="true"
@@ -341,7 +342,7 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/cross.svg#cross"></use>
   </svg></button><p>2D analysis</p></div><figcaption>2D analysis</figcaption></figure><p>Another new form of symmetry supported with the CalculiX solver is cyclic symmetry. It can be defined with the <a
-  href="https://wiki.freecad.org/FEM_ConstraintTie"
+  href="https://wiki.freecad.org/FEM_ConstraintTie/es"
   class="external-link" target="_blank" rel="external noreferrer nofollow">tie constraint<svg
     class="icon external"
     aria-hidden="true"
@@ -385,7 +386,7 @@
 <p>The implementation of Netgen was also replaced to work on Linux. Symbols of analysis features are now properly scaled and their size can be adjusted. There are several mesh appearance improvements as well. Old FEM examples on the Start page were updated and replaced with one file including three different approaches (1D, 2D and 3D) to the classic cantilever beam analysis.</p>
 <p>Finally, the menu/toolbar names of several analysis features were changed to eliminate incorrect usage of the word &ldquo;constraint&rdquo; and make their meaning more clear.</p>
 <p>A full list of changes, excluding minor bug fixes, can be found in the <a
-  href="https://wiki.freecad.org/Release_notes_1.0#FEM_Workbench"
+  href="https://wiki.freecad.org/Release_notes_1.0#FEM_Workbench/es"
   class="external-link" target="_blank" rel="external noreferrer nofollow">release notes<svg
     class="icon external"
     aria-hidden="true"
@@ -393,7 +394,7 @@
     <use href="/FreeCAD-Website/svg/external.svg#external"></use>
   </svg></a>.</p>
 <p>Such enormous improvements wouldn&rsquo;t be possible without our new developer - Mario Passaglia (marioalexis84), working with whom is a pleasure. His contributions were <a
-  href="https://wiki.freecad.org/Donate"
+  href="https://wiki.freecad.org/Donate/es"
   class="external-link" target="_blank" rel="external noreferrer nofollow">sponsored<svg
     class="icon external"
     aria-hidden="true"
@@ -444,37 +445,25 @@
             href="/FreeCAD-Website/es/features/">Características</a><ul></ul></li><li>
           <a
             href="/FreeCAD-Website/es/download/">Descarga</a><ul><li>
+                  <a
+                    href="/FreeCAD-Website/es/releases/">Releases</a>
+                </li><li>
                       <a
-                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development builds<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
+                        href="/FreeCAD-Website/es/download/addons/">Addons</a>
                     </li><li>
                       <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples an parts library<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
-                      <a
-                        href="/FreeCAD-Website/es/download/releases/">Releases</a>
+                        href="/FreeCAD-Website/es/download/unstable/">Unstable</a>
                     </li></ul></li><li>
           <a
             href="/FreeCAD-Website/es/news/" aria-current="page" class="active">Actualidad</a><ul><li>
                   <a
                     href="/FreeCAD-Website/es/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/FreeCAD-Website/es/authors/">Autores</a>
+                        <a href="/FreeCAD-Website/es/author/">Autor</a>
                       </li><li>
-                        <a href="/FreeCAD-Website/es/categories/">Categorías</a>
+                        <a href="/FreeCAD-Website/es/category/">Categoría</a>
                       </li><li>
                         <a href="/FreeCAD-Website/es/tags/">Etiquetas</a>
-                      </li><li>
-                        <a href="/FreeCAD-Website/es/versions/">Versiones</a>
                       </li></ul></li><li>
           <a
             href="/FreeCAD-Website/es/community/">Comunidad</a><ul><li>
@@ -498,10 +487,20 @@
   </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/es/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/es/community/addons/">Addons</a>
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="/FreeCAD-Website/es/community/telemetry/">Telemetry</a>
@@ -509,7 +508,7 @@
           <a
             href="/FreeCAD-Website/es/docs/">Documentación</a><ul><li>
                   <a
-                    href="https://wiki.freecad.org/User_hub" target="_blank" rel="external noreferrer nofollow">User manual<svg
+                    href="https://wiki.freecad.org/User_hub/es" target="_blank" rel="external noreferrer nofollow">User manual<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
@@ -563,6 +562,14 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/mastodon.svg#mastodon"></use>
   </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
     target="_blank" rel="external noreferrer nofollow"><svg
@@ -594,6 +601,14 @@
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://maxwxyz.github.io/FreeCAD-Website/es/index.xml"
+    type="application/rss&#43;xml"
+    title="RSS feed"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/rss.svg#rss"></use>
   </svg></a><a
   href="/FreeCAD-Website/es/fedishare.html#title=Major&#43;FEM&#43;Workbench&#43;improvements&#43;for&#43;FreeCAD&#43;1.0&amp;description=FreeCAD&#43;1.0&#43;brings&#43;a&#43;true&#43;revolution.&#43;But&#43;apart&#43;from&#43;the&#43;TNP&#43;mitigation%2C&#43;built-in&#43;Assembly&#43;workbench%2C&#43;material&#43;handling&#43;rework%2C&#43;and&#43;major&#43;Sketcher&#43;improvements%2C&#43;there%E2%80%99s&#43;a&#43;less&#43;common&#43;module&#43;that&#43;%E2%80%A6%0A%23fem&amp;url=https://maxwxyz.github.io/FreeCAD-Website/es/news/major-fem-workbench-improvements-for-freecad-1-0/"
   title="Compartir en Fediverse"
@@ -637,9 +652,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-05-05
+    Modified: 2026-09-23
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/17615c056717da0e1d8134a1316f96bf1c2f37b7">17615c0<svg
+      Commit: <a href="https://github.com/freecad/website/commit/efdfa08161fa1b81bbff5f770b0baaf19e5deffb">efdfa081<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

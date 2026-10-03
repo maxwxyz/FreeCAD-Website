@@ -27,26 +27,23 @@
   </style><style>
       @media (prefers-color-scheme: dark) {
         :root {
-          --header: rgb(16, 16, 16);
-          --theme: rgb(32, 32, 32);
-          --entry: rgb(48, 48, 48);
+          --header: rgb(8, 8, 8);
+          --theme: rgb(16, 16, 16);
+          --entry: rgb(32, 32, 32);
           --tone: rgb(64, 64, 64);
-          --footer: rgb(80, 80, 80);
+          --backdrop: rgba(64, 64, 64, 0.8);
           --primary: rgb(240, 240, 240);
           --secondary: rgb(224, 224, 224);
           --tertiary: rgb(208, 208, 208);
-          --backdrop: rgba(0, 0, 0, 0.8);
-          --backdrop: rgba(0, 0, 0, 0.75);
-          --accent: rgb(102, 177, 255);
-          --accent-hover: rgb(65, 143, 222);
-          --underline: underline solid currentColor var(--line);
-          --border: var(--line) solid var(--tone);
+          --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+          --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+          --angle: 315deg;
         }
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/FreeCAD-Website/css/styles.cb71b36b5732d30ca23c01d073b3e202fee816532c3843c6b985ab0d743f3dc2.css"
-          integrity="sha256-y3Gza1cy0wyiPAHQc7PiAv7oFlMsOEPGuYWrDXQ/PcI="
+          href="/FreeCAD-Website/css/styles.ba4e0c8246fe032f190f1dac870eb9b1043660e412e761656abaa036a978d511.css"
+          integrity="sha256-uk4Mgkb&#43;Ay8ZDx2shw65sQQ2YOQS52FlarqgNql41RE="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -55,7 +52,11 @@
       type="image/x-icon"
       href="/FreeCAD-Website/favicon.ico"><link
       rel="apple-touch-icon"
-      href="/FreeCAD-Website/apple-touch-icon.png"><title>FreeCAD | Forged in FreeCAD - Alexander&#39;s PCB Holder</title>
+      href="/FreeCAD-Website/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://maxwxyz.github.io/FreeCAD-Website/ja/index.xml"
+    title="FreeCAD"><title>FreeCAD | Forged in FreeCAD - Alexander&#39;s PCB Holder</title>
   <meta
     name="description"
     content="あなた自身の自由でオープンソースのパラメトリックモデラー"><meta
@@ -94,7 +95,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="news">
     <meta property="article:published_time" content="2023-11-20T00:00:00+00:00">
-    <meta property="article:modified_time" content="2026-05-05T08:10:07+02:00">
+    <meta property="article:modified_time" content="2026-09-23T13:25:40+02:00">
     <meta property="article:tag" content="User Story">
     <meta property="article:tag" content="3D Printing">
     <meta property="article:tag" content="PCB">
@@ -108,19 +109,19 @@
 </div>
 <header class="site-header">
 
-  <div class="logo">
-    <a
-      href="/FreeCAD-Website/ja/"
-      accesskey="h"
-      title="ホームページ (Alt + H)"
-      aria-label="ホームページ"><svg
+  <a
+    class="logo"
+    href="/FreeCAD-Website/ja/"
+    accesskey="h"
+    title="ホームページ (Alt + H)"
+    aria-label="ホームページ">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/FreeCAD-Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/FreeCAD-Website/wordmark.svg#wordmark"></use>
     </svg></a>
-  </div>
 
   <div class="site-nav"><nav class="menu">
   <button
@@ -162,7 +163,7 @@
             href="/FreeCAD-Website/ja/docs/">ドキュメント</a>
         </li><li>
           <a
-            href="/FreeCAD-Website/ja/donate/" class="donate-button">♥ 寄付する</a>
+            href="/FreeCAD-Website/ja/donate/" class="button donate">♥ 寄付する</a>
         </li></ul>
 </nav>
 <div class="language-dropdown">
@@ -221,17 +222,17 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/date.svg#date"></use>
   </svg><time datetime="2023-11-20T00:00:00Z">2023年11月20日</time>
-  </span><span class="meta authors"><svg
-    class="icon authors"
+  </span><span class="meta author"><svg
+    class="icon author"
     aria-hidden="true"
     focusable="false">
-    <use href="/FreeCAD-Website/svg/authors.svg#authors"></use>
-  </svg><a href="/FreeCAD-Website/ja/authors/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta categories"><svg
-    class="icon categories"
+    <use href="/FreeCAD-Website/svg/author.svg#author"></use>
+  </svg><a href="/FreeCAD-Website/ja/author/jo-hinchliffe/">Jo Hinchliffe (77)</a></span><span class="meta category"><svg
+    class="icon category"
     aria-hidden="true"
     focusable="false">
-    <use href="/FreeCAD-Website/svg/categories.svg#categories"></use>
-  </svg><a href="/FreeCAD-Website/ja/categories/showcase/">Showcase (30)</a></span><span class="meta tags"><svg
+    <use href="/FreeCAD-Website/svg/category.svg#category"></use>
+  </svg><a href="/FreeCAD-Website/ja/category/showcase/">Showcase (30)</a></span><span class="meta tags"><svg
     class="icon tags"
     aria-hidden="true"
     focusable="false">
@@ -258,14 +259,14 @@
       </figcaption></figure></section><div class="content"><p>Spotted over on Mastodon, we thought Alexander&rsquo;s (PistonPin) PCB holder design was an excellent tool and a great example of functional 3D printing and FreeCAD. Chatting with Alexander it&rsquo;s clear he is an experienced CAD user with lots of previous projects under his belt.</p>
 <p>&ldquo;<em>I switched from Fusion 360 to FreeCAD a few years ago, when Autodesk decided to cut back on features from the maker license. This was a much-needed reminder of the importance of open source and truly owning your creations, so I&rsquo;m very thankful to Autodesk for this decision!</em>&rdquo;</p>
 <p>Alexander has mainly used the <a
-  href="https://wiki.freecad.org/PartDesign_Workbench"
+  href="https://wiki.freecad.org/PartDesign_Workbench/ja"
   class="external-link" target="_blank" rel="external noreferrer nofollow">PartDesign workbench<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/external.svg#external"></use>
   </svg></a> and tools to create this useful design and he also used some incorporated some earlier project parts that was also built around 2020 aluminium extrusion. To draw the extruded aluminium profile Alexander used the <a
-  href="https://wiki.freecad.org/Sketcher_Workbench"
+  href="https://wiki.freecad.org/Sketcher_Workbench/ja"
   class="external-link" target="_blank" rel="external noreferrer nofollow">Sketcher tools<svg
     class="icon external"
     aria-hidden="true"
@@ -304,14 +305,14 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/cross.svg#cross"></use>
   </svg></button><p>Alex single profile</p></div><figcaption>Alex single profile</figcaption></figure><p>With the single slot profile sketched and constrained he then used the <a
-  href="https://wiki.freecad.org/PartDesign_PolarPattern"
+  href="https://wiki.freecad.org/PartDesign_PolarPattern/ja"
   class="external-link" target="_blank" rel="external noreferrer nofollow">PolarPattern<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/external.svg#external"></use>
   </svg></a> tool to create the other 3 identical slot profiles. Adding a simple circle for the centre bore and some <a
-  href="https://wiki.freecad.org/PartDesign_Chamfer"
+  href="https://wiki.freecad.org/PartDesign_Chamfer/ja"
   class="external-link" target="_blank" rel="external noreferrer nofollow">chamfers<svg
     class="icon external"
     aria-hidden="true"
@@ -350,14 +351,14 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/cross.svg#cross"></use>
   </svg></button><p>Alex polar patter</p></div><figcaption>Alex polar patter</figcaption></figure><p>Drawing the legs and the position-able PCB holding blocks, Alexander has made use of the XY plane and added other <a
-  href="https://wiki.freecad.org/PartDesign_Plane"
+  href="https://wiki.freecad.org/PartDesign_Plane/ja"
   class="external-link" target="_blank" rel="external noreferrer nofollow">Datum planes<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/external.svg#external"></use>
   </svg></a> to sketch on to. He has used the <a
-  href="https://wiki.freecad.org/A2plus_Workbench"
+  href="https://wiki.freecad.org/A2plus_Workbench/ja"
   class="external-link" target="_blank" rel="external noreferrer nofollow">A2plus workbench<svg
     class="icon external"
     aria-hidden="true"
@@ -470,37 +471,25 @@
             href="/FreeCAD-Website/ja/features/">特徴</a><ul></ul></li><li>
           <a
             href="/FreeCAD-Website/ja/download/">ダウンロード</a><ul><li>
+                  <a
+                    href="/FreeCAD-Website/ja/releases/">Releases</a>
+                </li><li>
                       <a
-                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development builds<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
+                        href="/FreeCAD-Website/ja/download/addons/">Addons</a>
                     </li><li>
                       <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples an parts library<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
-                      <a
-                        href="/FreeCAD-Website/ja/download/releases/">Releases</a>
+                        href="/FreeCAD-Website/ja/download/unstable/">Unstable</a>
                     </li></ul></li><li>
           <a
             href="/FreeCAD-Website/ja/news/" aria-current="page" class="active">ニュース</a><ul><li>
                   <a
                     href="/FreeCAD-Website/ja/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/FreeCAD-Website/ja/authors/">著者一覧</a>
+                        <a href="/FreeCAD-Website/ja/author/">著者</a>
                       </li><li>
-                        <a href="/FreeCAD-Website/ja/categories/">カテゴリ一覧</a>
+                        <a href="/FreeCAD-Website/ja/category/">カテゴリ</a>
                       </li><li>
                         <a href="/FreeCAD-Website/ja/tags/">タグ一覧</a>
-                      </li><li>
-                        <a href="/FreeCAD-Website/ja/versions/">バージョン一覧</a>
                       </li></ul></li><li>
           <a
             href="/FreeCAD-Website/ja/community/">コミュニティ</a><ul><li>
@@ -524,10 +513,20 @@
   </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/ja/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/ja/community/addons/">Addons</a>
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="/FreeCAD-Website/ja/community/telemetry/">Telemetry</a>
@@ -535,7 +534,7 @@
           <a
             href="/FreeCAD-Website/ja/docs/">ドキュメント</a><ul><li>
                   <a
-                    href="https://wiki.freecad.org/User_hub" target="_blank" rel="external noreferrer nofollow">User manual<svg
+                    href="https://wiki.freecad.org/User_hub/ja" target="_blank" rel="external noreferrer nofollow">User manual<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
@@ -589,6 +588,14 @@
     focusable="false">
     <use href="/FreeCAD-Website/svg/mastodon.svg#mastodon"></use>
   </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
     target="_blank" rel="external noreferrer nofollow"><svg
@@ -620,6 +627,14 @@
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://maxwxyz.github.io/FreeCAD-Website/ja/index.xml"
+    type="application/rss&#43;xml"
+    title="RSS feed"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/rss.svg#rss"></use>
   </svg></a><a
   href="/FreeCAD-Website/ja/fedishare.html#title=Forged&#43;in&#43;FreeCAD&#43;-&#43;Alexander%27s&#43;PCB&#43;Holder&amp;description=Spotted&#43;over&#43;on&#43;Mastodon%2C&#43;we&#43;thought&#43;Alexander%E2%80%99s&#43;%28PistonPin%29&#43;PCB&#43;holder&#43;design&#43;was&#43;an&#43;excellent&#43;tool&#43;and&#43;a&#43;great&#43;example&#43;of&#43;functional&#43;3D&#43;printing&#43;and&#43;FreeCAD.&#43;Chatting&#43;with&#43;Alexander&#43;it%E2%80%99s&#43;clear&#43;he&#43;is&#43;%E2%80%A6%0A%23user-story&#43;%233d-printing&#43;%23pcb&amp;url=https://maxwxyz.github.io/FreeCAD-Website/ja/news/forged-in-freecad-alexanders-pcb-holder/"
   title="共有 Fediverse"
@@ -663,9 +678,9 @@
   </svg></a>
 </span>
 <span>
-    Modified: 2026-05-05
+    Modified: 2026-09-23
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/ab12b609077875783943636ca2c31feec3421a6a">ab12b60<svg
+      Commit: <a href="https://github.com/freecad/website/commit/efdfa08161fa1b81bbff5f770b0baaf19e5deffb">efdfa081<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">

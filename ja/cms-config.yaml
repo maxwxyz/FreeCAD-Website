@@ -9,6 +9,21 @@ backend:
   name: github
   repo: freecad/website
   branch: main
+  auth_methods: [token]
+  open_authoring: true
+  auth_scope: public_repo
+  cms_label_prefix: cms/
+  squash_merges: true
+  preview_context: pages preview
+  commit_messages:
+    create: 'Create {{collection}} {{slug}} by @{{author-login}}'
+    update: 'Update {{collection}} {{slug}} by @{{author-login}}'
+    delete: 'Delete {{collection}} {{slug}} by @{{author-login}}'
+    uploadMedia: 'Upload {{path}} by @{{author-login}}'
+    deleteMedia: 'Delete {{path}} by @{{author-login}}'
+    openAuthoring: '{{message}} by @{{author-login}} by @{{author-login}}'
+
+publish_mode: editorial_workflow
 
 media_folder: /static
 public_folder: /
@@ -46,7 +61,7 @@ i18n:
 slug:
   encoding: ascii
   clean_accents: true
-  sanitize_replacement: "-"
+  sanitize_replacement: '-'
   trim: true
   lowercase: true
 
@@ -61,15 +76,15 @@ collections:
 
   - name: homepage
     label: Homepage
-    media_folder: ""
-    public_folder: ""
+    media_folder: ''
+    public_folder: ''
     thumbnail: cover.image
     icon: home
     i18n: true
     files:
       - name: homepage
         label: Homepage
-        file: "content/{{locale}}/_index.md"
+        file: 'content/{{locale}}/_index.md'
         icon: home
         i18n: true
         fields:
@@ -101,19 +116,18 @@ collections:
             required: false
 
   - divider: true
-
   - name: features-section
     label: Features
     description: Features section
-    media_folder: ""
-    public_folder: ""
-    thumbnail: cover.image
+    media_folder: ''
+    public_folder: ''
+    thumbnail: ['/{{slug}}.webp', cover.image]
     icon: bolt
     i18n: true
     files:
-      - name: features-section-index
+      - name: features-section
         label: Features
-        file: content/{{locale}}/features/_index.md
+        file: 'content/{{locale}}/features/_index.md'
         icon: bolt
         i18n: true
         fields:
@@ -145,37 +159,24 @@ collections:
             required: false
 
   - divider: true
-
   - name: download-pages
     label: Download
     description: Download collection
-    folder: content
-    path: 'download/releases/{{slug}}/index'
-    media_folder: ""
-    public_folder: ""
-    thumbnail: cover.image
+    folder: 'content/{{locale}}/download'
+    path: '{{slug}}/index'
+    nested:
+      depth: 5
+      summary: '{{title}}'
+      subfolders: true
+    meta: { path: { index_file: _index } }
+    media_folder: ''
+    public_folder: ''
+    thumbnail: ['/{{slug}}.webp', cover.image]
     icon: download
-    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}"
+    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
     reorder:
       key: weight
     i18n: true
-
-    sortable_fields:
-      fields: [title, date, authors]
-      default:
-        field: date
-        direction: descending
-
-    view_groups:
-      groups:
-        - name: year
-          label: Year
-          field: date
-          pattern: '\d{4}'
-        - name: category
-          label: Categories
-          field: categories
-      default: year
 
     view_filters:
       filters:
@@ -183,25 +184,12 @@ collections:
           label: Drafts
           field: draft
           pattern: true
-        - name: posts_2023
-          label: Posted in 2023
+        - name: upcoming
+          label: Upcoming date
           field: date
-          pattern: '^2023'
-        - name: posts_2024
-          label: Posted in 2024
-          field: date
-          pattern: '^2024'
-        - name: posts_2025
-          label: Posted in 2025
-          field: date
-          pattern: '^2025'
-        - name: posts_2026
-          label: Posted in 2026
-          field: date
-          pattern: '^2026'
-        
-
+          gte: '{{today}}'
     index_file:
+      name: _index
       label: Download Index
       icon: home
       i18n: true
@@ -261,6 +249,7 @@ collections:
       - name: date
         label: Date
         widget: datetime
+        type: date
         i18n: duplicate
       - name: draft
         label: Draft
@@ -268,6 +257,7 @@ collections:
         default: false
         i18n: duplicate
         required: false
+      
       - name: cover
         label: Cover
         widget: object
@@ -282,23 +272,119 @@ collections:
         i18n: true
 
   - divider: true
-
-  - name: news-pages
-    label: News
-    description: News collection
-    folder: content
-    path: 'news/{{year}}/{{month}}/{{slug}}/index'
-    media_folder: ""
-    public_folder: ""
-    thumbnail: cover.image
-    icon: brand_awareness
-    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}"
+  - name: releases-pages
+    label: Releases
+    description: Releases collection
+    folder: 'content/{{locale}}/releases'
+    path: '{{slug}}/index'
+    media_folder: ''
+    public_folder: ''
+    thumbnail: ['/{{slug}}.webp', cover.image]
+    icon: update
+    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
     reorder:
       key: weight
     i18n: true
 
+    view_filters:
+      filters:
+        - name: drafts
+          label: Drafts
+          field: draft
+          pattern: true
+        - name: upcoming
+          label: Upcoming date
+          field: date
+          gte: '{{today}}'
+    index_file:
+      name: _index
+      label: Releases Index
+      icon: home
+      i18n: true
+      fields:
+        - name: title
+          label: Title
+          widget: string
+          i18n: true
+        - name: description
+          label: Description
+          widget: string
+          i18n: true
+        - name: linkTitle
+          label: Link Title
+          widget: string
+          i18n: true
+          required: false
+        - name: redirect
+          label: Redirect
+          widget: string
+          i18n: duplicate
+          required: false
+        - name: cover
+          label: Cover
+          widget: object
+          i18n: true
+          required: false
+          fields:
+            - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+            - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+        - name: body
+          label: Body
+          widget: richtext
+          i18n: true
+          required: false
+
+    fields:
+      - name: title
+        label: Title
+        widget: string
+        i18n: true
+      - name: description
+        label: Description
+        widget: string
+        i18n: true
+        required: false
+      - name: date
+        label: Date
+        widget: datetime
+        type: date
+        i18n: duplicate
+      - name: draft
+        label: Draft
+        widget: boolean
+        default: false
+        i18n: duplicate
+        required: false
+      
+      - name: cover
+        label: Cover
+        widget: object
+        i18n: true
+        required: false
+        fields:
+          - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+          - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+      - name: body
+        label: Body
+        widget: richtext
+        i18n: true
+
+  - divider: true
+  - name: news-pages
+    label: News
+    description: News collection
+    folder: 'content/{{locale}}/news'
+    path: '{{year}}/{{month}}/{{slug}}/index'
+    media_folder: ''
+    public_folder: ''
+    thumbnail: ['/{{slug}}.webp', cover.image]
+    icon: brand_awareness
+    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
+    reorder:
+      key: weight
+    i18n: true
     sortable_fields:
-      fields: [title, date, authors]
+      fields: [title, date, author, category]
       default:
         field: date
         direction: descending
@@ -310,8 +396,8 @@ collections:
           field: date
           pattern: '\d{4}'
         - name: category
-          label: Categories
-          field: categories
+          label: Category
+          field: category
       default: year
 
     view_filters:
@@ -320,6 +406,14 @@ collections:
           label: Drafts
           field: draft
           pattern: true
+        - name: upcoming
+          label: Upcoming date
+          field: date
+          gte: '{{today}}'
+        - name: posts_2022
+          label: Posted in 2022
+          field: date
+          pattern: '^2022'
         - name: posts_2023
           label: Posted in 2023
           field: date
@@ -336,32 +430,8 @@ collections:
           label: Posted in 2026
           field: date
           pattern: '^2026'
-        - name: announcement
-          label: Announcement
-          field: categories
-          pattern: announcement
-        - name: event
-          label: Event
-          field: categories
-          pattern: event
-        - name: feature
-          label: Feature
-          field: categories
-          pattern: feature
-        - name: showcase
-          label: Showcase
-          field: categories
-          pattern: showcase
-        - name: tutorial
-          label: Tutorial
-          field: categories
-          pattern: tutorial
-        - name: update
-          label: Update
-          field: categories
-          pattern: Update
-
     index_file:
+      name: _index
       label: News Index
       icon: home
       i18n: true
@@ -411,6 +481,7 @@ collections:
       - name: date
         label: Date
         widget: datetime
+        type: date
         i18n: duplicate
       - name: draft
         label: Draft
@@ -418,13 +489,13 @@ collections:
         default: false
         i18n: duplicate
         required: false
-      - name: authors
-        label: Authors
+      - name: author
+        label: Author
         widget: string
         i18n: duplicate
         required: false
-      - name: categories
-        label: Categories
+      - name: category
+        label: Category
         widget: select
         options:
           - { label: Announcement, value: announcement }
@@ -434,7 +505,6 @@ collections:
           - { label: Tutorial, value: tutorial }
           - { label: Update, value: update }
         i18n: duplicate
-        required: false
       - name: tags
         label: Tags
         widget: list
@@ -454,37 +524,19 @@ collections:
         i18n: true
 
   - divider: true
-
   - name: community-pages
     label: Community
     description: Community collection
-    folder: content
-    path: 'community/{{slug}}/_index'
-    media_folder: ""
-    public_folder: ""
-    thumbnail: cover.image
+    folder: 'content/{{locale}}/community'
+    path: '{{slug}}/_index'
+    media_folder: ''
+    public_folder: ''
+    thumbnail: ['/{{slug}}.webp', cover.image]
     icon: groups
-    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}"
+    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
     reorder:
       key: weight
     i18n: true
-
-    sortable_fields:
-      fields: [title, date, authors]
-      default:
-        field: date
-        direction: descending
-
-    view_groups:
-      groups:
-        - name: year
-          label: Year
-          field: date
-          pattern: '\d{4}'
-        - name: category
-          label: Categories
-          field: categories
-      default: year
 
     view_filters:
       filters:
@@ -492,25 +544,12 @@ collections:
           label: Drafts
           field: draft
           pattern: true
-        - name: posts_2023
-          label: Posted in 2023
+        - name: upcoming
+          label: Upcoming date
           field: date
-          pattern: '^2023'
-        - name: posts_2024
-          label: Posted in 2024
-          field: date
-          pattern: '^2024'
-        - name: posts_2025
-          label: Posted in 2025
-          field: date
-          pattern: '^2025'
-        - name: posts_2026
-          label: Posted in 2026
-          field: date
-          pattern: '^2026'
-        
-
+          gte: '{{today}}'
     index_file:
+      name: _index
       label: Community Index
       icon: home
       i18n: true
@@ -570,6 +609,7 @@ collections:
       - name: date
         label: Date
         widget: datetime
+        type: date
         i18n: duplicate
       - name: draft
         label: Draft
@@ -577,6 +617,7 @@ collections:
         default: false
         i18n: duplicate
         required: false
+      
       - name: cover
         label: Cover
         widget: object
@@ -591,19 +632,18 @@ collections:
         i18n: true
 
   - divider: true
-
   - name: docs-section
     label: Docs
     description: Docs section
-    media_folder: ""
-    public_folder: ""
-    thumbnail: cover.image
+    media_folder: ''
+    public_folder: ''
+    thumbnail: ['/{{slug}}.webp', cover.image]
     icon: docs
     i18n: true
     files:
-      - name: docs-section-index
+      - name: docs-section
         label: Docs
-        file: content/{{locale}}/docs/_index.md
+        file: 'content/{{locale}}/docs/_index.md'
         icon: docs
         i18n: true
         fields:
@@ -635,19 +675,18 @@ collections:
             required: false
 
   - divider: true
-
   - name: manual-section
     label: Manual
     description: Manual section
-    media_folder: ""
-    public_folder: ""
-    thumbnail: cover.image
+    media_folder: ''
+    public_folder: ''
+    thumbnail: ['/{{slug}}.webp', cover.image]
     icon: menu_book
     i18n: true
     files:
-      - name: manual-section-index
+      - name: manual-section
         label: Manual
-        file: content/{{locale}}/manual/_index.md
+        file: 'content/{{locale}}/manual/_index.md'
         icon: menu_book
         i18n: true
         fields:
@@ -679,37 +718,24 @@ collections:
             required: false
 
   - divider: true
-
   - name: dev-pages
     label: Dev
     description: Dev collection
-    folder: content
-    path: 'dev/{{slug}}/_index'
-    media_folder: ""
-    public_folder: ""
-    thumbnail: cover.image
+    folder: 'content/{{locale}}/dev'
+    path: '{{slug}}/index'
+    nested:
+      depth: 5
+      summary: '{{title}}'
+      subfolders: true
+    meta: { path: { index_file: _index } }
+    media_folder: ''
+    public_folder: ''
+    thumbnail: ['/{{slug}}.webp', cover.image]
     icon: logo_dev
-    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}"
+    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
     reorder:
       key: weight
     i18n: true
-
-    sortable_fields:
-      fields: [title, date, authors]
-      default:
-        field: date
-        direction: descending
-
-    view_groups:
-      groups:
-        - name: year
-          label: Year
-          field: date
-          pattern: '\d{4}'
-        - name: category
-          label: Categories
-          field: categories
-      default: year
 
     view_filters:
       filters:
@@ -717,25 +743,12 @@ collections:
           label: Drafts
           field: draft
           pattern: true
-        - name: posts_2023
-          label: Posted in 2023
+        - name: upcoming
+          label: Upcoming date
           field: date
-          pattern: '^2023'
-        - name: posts_2024
-          label: Posted in 2024
-          field: date
-          pattern: '^2024'
-        - name: posts_2025
-          label: Posted in 2025
-          field: date
-          pattern: '^2025'
-        - name: posts_2026
-          label: Posted in 2026
-          field: date
-          pattern: '^2026'
-        
-
+          gte: '{{today}}'
     index_file:
+      name: _index
       label: Dev Index
       icon: home
       i18n: true
@@ -795,6 +808,7 @@ collections:
       - name: date
         label: Date
         widget: datetime
+        type: date
         i18n: duplicate
       - name: draft
         label: Draft
@@ -802,6 +816,7 @@ collections:
         default: false
         i18n: duplicate
         required: false
+      
       - name: cover
         label: Cover
         widget: object
@@ -816,19 +831,18 @@ collections:
         i18n: true
 
   - divider: true
-
   - name: api-section
     label: API
     description: API section
-    media_folder: ""
-    public_folder: ""
-    thumbnail: cover.image
+    media_folder: ''
+    public_folder: ''
+    thumbnail: ['/{{slug}}.webp', cover.image]
     icon: code_xml
     i18n: true
     files:
-      - name: api-section-index
+      - name: api-section
         label: API
-        file: content/{{locale}}/api/_index.md
+        file: 'content/{{locale}}/api/_index.md'
         icon: code_xml
         i18n: true
         fields:
@@ -860,37 +874,62 @@ collections:
             required: false
 
   - divider: true
-
-  - name: donate-pages
+  - name: donate-section
     label: Donate
-    description: Donate collection
-    folder: content
-    path: 'donate/{{slug}}/_index'
-    media_folder: ""
-    public_folder: ""
-    thumbnail: cover.image
+    description: Donate section
+    media_folder: ''
+    public_folder: ''
+    thumbnail: ['/{{slug}}.webp', cover.image]
     icon: favorite
-    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{authors | default('no authors')}} · {{locales | upper}}"
+    i18n: true
+    files:
+      - name: donate-section
+        label: Donate
+        file: 'content/{{locale}}/donate/_index.md'
+        icon: favorite
+        i18n: true
+        fields:
+          - name: title
+            label: Title
+            widget: string
+            i18n: true
+          - name: description
+            label: Description
+            widget: string
+            i18n: true
+          - name: linkTitle
+            label: Link Title
+            widget: string
+            i18n: true
+            required: false
+          - name: cover
+            label: Cover
+            widget: object
+            i18n: true
+            required: false
+            fields:
+              - { name: image, label: Image, widget: image, i18n: duplicate, required: false }
+              - { name: caption, label: Caption, widget: string, i18n: true, required: false }
+          - name: body
+            label: Body
+            widget: richtext
+            i18n: true
+            required: false
+
+  - divider: true
+  - name: about-pages
+    label: About
+    description: About collection
+    folder: 'content/{{locale}}/about'
+    path: '{{slug}}/_index'
+    media_folder: ''
+    public_folder: ''
+    thumbnail: ['/{{slug}}.webp', cover.image]
+    icon: info
+    summary: "**{{title}}** {{date | date('DD MMM YYYY')}} {{draft | ternary('(draft)', '')}} · {{author | default('no author')}} · {{locales | upper}}"
     reorder:
       key: weight
     i18n: true
-
-    sortable_fields:
-      fields: [title, date, authors]
-      default:
-        field: date
-        direction: descending
-
-    view_groups:
-      groups:
-        - name: year
-          label: Year
-          field: date
-          pattern: '\d{4}'
-        - name: category
-          label: Categories
-          field: categories
-      default: year
 
     view_filters:
       filters:
@@ -898,26 +937,13 @@ collections:
           label: Drafts
           field: draft
           pattern: true
-        - name: posts_2023
-          label: Posted in 2023
+        - name: upcoming
+          label: Upcoming date
           field: date
-          pattern: '^2023'
-        - name: posts_2024
-          label: Posted in 2024
-          field: date
-          pattern: '^2024'
-        - name: posts_2025
-          label: Posted in 2025
-          field: date
-          pattern: '^2025'
-        - name: posts_2026
-          label: Posted in 2026
-          field: date
-          pattern: '^2026'
-        
-
+          gte: '{{today}}'
     index_file:
-      label: Donate Index
+      name: _index
+      label: About Index
       icon: home
       i18n: true
       fields:
@@ -976,6 +1002,7 @@ collections:
       - name: date
         label: Date
         widget: datetime
+        type: date
         i18n: duplicate
       - name: draft
         label: Draft
@@ -983,6 +1010,7 @@ collections:
         default: false
         i18n: duplicate
         required: false
+      
       - name: cover
         label: Cover
         widget: object
@@ -996,6 +1024,40 @@ collections:
         widget: richtext
         i18n: true
 
+  - divider: true
+
+  - name: theme
+    label: Theme i18n
+    icon: language
+    i18n: true
+    files:
+      - name: translations
+        label: Theme Translations
+        file: 'themes/trigo/i18n/{{locale}}.yaml'
+        icon: language
+        i18n: true
+        fields:
+          - name: strings
+            label: i18n strings
+            widget: list
+            root: true
+            summary: '{{id}} - {{translation}}'
+            i18n: true
+            allow_add: false
+            allow_remove: false
+            allow_duplicate: false
+            allow_reorder: false
+            hint: 'Template variables such as {{ .Count }} are supported.'
+            fields:
+              - name: id
+                label: Translation ID
+                widget: string
+                i18n: duplicate
+              - name: translation
+                label: Translation
+                widget: string
+                i18n: true
+
 singletons:
 
   - name: settings
@@ -1003,8 +1065,8 @@ singletons:
     file: config/_default/params.yaml
     icon: settings
     fields:
-      - name: site_authors
-        label: Default site authors
+      - name: site_author
+        label: Default site author
         widget: string
       - name: site_keywords
         label: Site keywords and tags
@@ -1025,7 +1087,7 @@ singletons:
       - name: socials
         label: Social media links
         widget: list
-        summary: "{{label}}"
+        summary: '{{label}}'
         collapsed: auto
         fields:
           - name: label
@@ -1052,7 +1114,7 @@ singletons:
         label: Sponsors
         label_singular: Sponsor
         widget: list
-        summary: "{{label}} - {{tier}}"
+        summary: '{{label}} - {{tier}}'
         thumbnail: logo
         collapsed: auto
         root: true
@@ -1060,7 +1122,7 @@ singletons:
           - name: id
             label: Sponsor ID
             widget: hidden
-            default: "{{uuid_shorter}}"
+            default: '{{index}}'
           - name: label
             label: Label
             widget: string

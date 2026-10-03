@@ -27,26 +27,23 @@
   </style><style>
       @media (prefers-color-scheme: dark) {
         :root {
-          --header: rgb(16, 16, 16);
-          --theme: rgb(32, 32, 32);
-          --entry: rgb(48, 48, 48);
+          --header: rgb(8, 8, 8);
+          --theme: rgb(16, 16, 16);
+          --entry: rgb(32, 32, 32);
           --tone: rgb(64, 64, 64);
-          --footer: rgb(80, 80, 80);
+          --backdrop: rgba(64, 64, 64, 0.8);
           --primary: rgb(240, 240, 240);
           --secondary: rgb(224, 224, 224);
           --tertiary: rgb(208, 208, 208);
-          --backdrop: rgba(0, 0, 0, 0.8);
-          --backdrop: rgba(0, 0, 0, 0.75);
-          --accent: rgb(102, 177, 255);
-          --accent-hover: rgb(65, 143, 222);
-          --underline: underline solid currentColor var(--line);
-          --border: var(--line) solid var(--tone);
+          --accent: color-mix(in srgb, var(--accent-color) 50%, white 15%);
+          --accent-hover: color-mix(in srgb, var(--accent-color) 75%, white 30%);
+          --angle: 315deg;
         }
       }
     </style></noscript><link
           rel="stylesheet"
-          href="/FreeCAD-Website/css/styles.cb71b36b5732d30ca23c01d073b3e202fee816532c3843c6b985ab0d743f3dc2.css"
-          integrity="sha256-y3Gza1cy0wyiPAHQc7PiAv7oFlMsOEPGuYWrDXQ/PcI="
+          href="/FreeCAD-Website/css/styles.ba4e0c8246fe032f190f1dac870eb9b1043660e412e761656abaa036a978d511.css"
+          integrity="sha256-uk4Mgkb&#43;Ay8ZDx2shw65sQQ2YOQS52FlarqgNql41RE="
           crossorigin="anonymous"><link
       rel="icon"
       type="image/svg+xml"
@@ -55,7 +52,11 @@
       type="image/x-icon"
       href="/FreeCAD-Website/favicon.ico"><link
       rel="apple-touch-icon"
-      href="/FreeCAD-Website/apple-touch-icon.png"><title>FreeCAD | Donate</title>
+      href="/FreeCAD-Website/apple-touch-icon.png"><link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://maxwxyz.github.io/FreeCAD-Website/zh/index.xml"
+    title="FreeCAD"><title>FreeCAD | Donate</title>
   <meta
     name="description"
     content="Donate once or sponsor monthly to make FreeCAD even more awesome!"><meta
@@ -102,19 +103,19 @@
 </div>
 <header class="site-header">
 
-  <div class="logo">
-    <a
-      href="/FreeCAD-Website/zh/"
-      accesskey="h"
-      title="主页 (Alt + H)"
-      aria-label="主页"><svg
+  <a
+    class="logo"
+    href="/FreeCAD-Website/zh/"
+    accesskey="h"
+    title="主页 (Alt + H)"
+    aria-label="主页">
+    <svg
       class="logo-svg"
       aria-hidden="true"
       focusable="false">
 
-      <use href="/FreeCAD-Website/FreeCAD-wordmark.svg#logo"></use>
+      <use href="/FreeCAD-Website/wordmark.svg#wordmark"></use>
     </svg></a>
-  </div>
 
   <div class="site-nav"><nav class="menu">
   <button
@@ -156,7 +157,7 @@
             href="/FreeCAD-Website/zh/docs/">文档</a>
         </li><li>
           <a
-            href="/FreeCAD-Website/zh/donate/" aria-current="page" class="active donate-button">♥ 赞助</a>
+            href="/FreeCAD-Website/zh/donate/" aria-current="page" class="active button donate">♥ 赞助</a>
         </li></ul>
 </nav>
 <div class="language-dropdown">
@@ -354,22 +355,22 @@
         id="message-monthly-3">Become a Gold sponsor</label><button
           type="submit"
           id="payment-paypal"
-          class="platform"
+          class="link-thanks"
           formaction="https://www.paypal.com/donate/?hosted_button_id=M3Z8BGW6DB69Q"
           formmethod="get">Paypal</button><button
           type="submit"
           id="payment-stripe"
-          class="platform"
+          class="link-thanks"
           formaction="https://donate.stripe.com/14k3ei9TYgwFclq145"
           formmethod="get">Stripe</button><button
           type="submit"
           id="payment-github"
-          class="platform"
+          class="link-thanks"
           formaction="https://github.com/sponsors/freecad"
           formmethod="get">GitHub</button><button
           type="submit"
           id="payment-opencollective"
-          class="platform"
+          class="link-thanks"
           formaction="https://opencollective.com/freecad/donate"
           formmethod="get">OpenCollective</button><button
           type="button"
@@ -432,18 +433,6 @@
       display: block;
       background: color-mix(in srgb, #D4A715 75%, var(--header) 25%);
     }</style>
-
-<script>
-const THANKS_PAGE = '\/FreeCAD-Website\/zh\/donate\/thanks\/';
-
-document.querySelectorAll('.platform').forEach(link => {
-  link.addEventListener('click', () => {
-    setTimeout(() => {
-      window.location.assign(THANKS_PAGE);
-    }, 1500);
-  });
-});
-</script>
 </section>
 
   <div class="sponsors">
@@ -473,7 +462,8 @@ document.querySelectorAll('.platform').forEach(link => {
                       aria-hidden="true"
                       focusable="false">
                       <use href="/FreeCAD-Website/sponsors/jetbrains.svg#jetbrains"></use>
-                    </svg></a><a
+                    </svg></a><div
+                  class="sponsor-entry gold"title="John Smart"><h3>John Smart</h3></div><a
                   class="sponsor-entry gold"
                   href="https://www.kanardia.eu"
                   target="_blank"
@@ -557,16 +547,18 @@ document.querySelectorAll('.platform').forEach(link => {
                       <use href="/FreeCAD-Website/sponsors/wetpaint.svg#wetpaint"></use>
                     </svg></a></div><h3>Silver</h3>
         <div class="sponsors-tier"><div
-                  class="sponsor-entry silver"title="Anonymous user"><h4>Anonymous user</h4></div><a
+                  class="sponsor-entry silver"title="Anonymous user"><h4>Anonymous user</h4></div><div
+                  class="sponsor-entry silver"title="Anonymous user"><h4>Anonymous user</h4></div><div
+                  class="sponsor-entry silver"title="Asa Gilmore"><h4>Asa Gilmore</h4></div><a
                   class="sponsor-entry silver"
                   href="https://chudovo.com"
                   target="_blank"
                   rel="external noreferrer nofollow"title="Chudovo - International software development company since 2006 in video security, logistics, medicine, and finance"><h4>Chudovo</h4></a><div
-                  class="sponsor-entry silver"title="Colombe Du Pouget De Nadaillac - French C, C&#43;&#43; and Python developer developing parametric drone aircrafts with FreeCAD and sometimes even contributes to it by fixing bugs she encounters"><h4>Colombe Du Pouget De Nadaillac</h4></div><a
+                  class="sponsor-entry silver"title="Colombe Du Pouget De Nadaillac - French C, C&#43;&#43; and Python contributor and developer of parametric drone aircrafts with FreeCAD"><h4>Colombe Du Pouget De Nadaillac</h4></div><a
                   class="sponsor-entry silver"
                   href="https://itworks.ag"
                   target="_blank"
-                  rel="external noreferrer nofollow"title="itWorks AG"><h4>itWorks AG</h4></a><a
+                  rel="external noreferrer nofollow"title="itWorks AG - Management and IT consulting firm focused on aligning technology with business strategy"><h4>itWorks AG</h4></a><a
                   class="sponsor-entry silver"
                   href="https://www.packtpub.com"
                   target="_blank"
@@ -579,7 +571,7 @@ document.querySelectorAll('.platform').forEach(link => {
                   href="https://route4me.com"
                   target="_blank"
                   rel="external noreferrer nofollow"title="Route4Me Route Planner - Last-mile route planning and route optimization"><h4>Route4Me Route Planner</h4></a></div><h3>Bronze</h3>
-        <div class="sponsors-tier"><div class="sponsor-entry bronze">3xxx</div><div class="sponsor-entry bronze">Amplituda d.o.o.</div><div class="sponsor-entry bronze">Andrzej Skarżyński</div><div class="sponsor-entry bronze">Artem Vasiatkin</div><div class="sponsor-entry bronze">Björn Jürgens</div><div class="sponsor-entry bronze">Brian Smith</div><div class="sponsor-entry bronze">Brian Smith</div><div class="sponsor-entry bronze">Bystroushaak</div><div class="sponsor-entry bronze">Custom Cut GmbH</div><div class="sponsor-entry bronze">Damian Toczek</div><div class="sponsor-entry bronze">Daniel Davison</div><div class="sponsor-entry bronze">David Yeung</div><div class="sponsor-entry bronze">Elevated Sensors</div><div class="sponsor-entry bronze">Flaviu Tamas</div><div class="sponsor-entry bronze">flightmansam</div><div class="sponsor-entry bronze">Genysys Engine ltd</div><div class="sponsor-entry bronze">Glen G</div><div class="sponsor-entry bronze">Hydroexigiantiki SA</div><div class="sponsor-entry bronze">Ian Rees</div><div class="sponsor-entry bronze">James Debono</div><div class="sponsor-entry bronze">James Waples</div><div class="sponsor-entry bronze">Jose Alonso Mendoza</div><div class="sponsor-entry bronze">JR</div><div class="sponsor-entry bronze">Kliment / Future Bits</div><div class="sponsor-entry bronze">Lex Heles</div><div class="sponsor-entry bronze">Lukas Alberts</div><div class="sponsor-entry bronze">MabeeSteve</div><div class="sponsor-entry bronze">Marcos Hernandez</div><div class="sponsor-entry bronze">Mario Zuena</div><div class="sponsor-entry bronze">Marius Grunca</div><div class="sponsor-entry bronze">Markus Vogt</div><div class="sponsor-entry bronze">Matt Valentine</div><div class="sponsor-entry bronze">NateXVI</div><div class="sponsor-entry bronze">nerd-sniped</div><div class="sponsor-entry bronze">P-i-U UG &amp; Co. KG</div><div class="sponsor-entry bronze">P. Smith</div><div class="sponsor-entry bronze">plasmapotential</div><div class="sponsor-entry bronze">Robert</div><div class="sponsor-entry bronze">RobotMachines</div><div class="sponsor-entry bronze">schreinermueller</div><div class="sponsor-entry bronze">Sintesi Labs Design</div><div class="sponsor-entry bronze">Ton Roosendaal</div><div class="sponsor-entry bronze">Un voyageur avec serviette</div><div class="sponsor-entry bronze">Ustun Design</div><div class="sponsor-entry bronze">Vinicius Dupuit</div><div class="sponsor-entry bronze">William Walker</div></div></div><div class="content"><figure>
+        <div class="sponsors-tier"><div class="sponsor-entry bronze">3xxx</div><div class="sponsor-entry bronze">Amplituda d.o.o.</div><div class="sponsor-entry bronze">Andrzej Skarżyński</div><div class="sponsor-entry bronze">Arnold Nefkens</div><div class="sponsor-entry bronze">Artem Vasiatkin</div><div class="sponsor-entry bronze">Björn Jürgens</div><div class="sponsor-entry bronze">Brandon K</div><div class="sponsor-entry bronze">Brian Smith</div><div class="sponsor-entry bronze">Brian Smith</div><div class="sponsor-entry bronze">Bystroushaak</div><div class="sponsor-entry bronze">Custom Cut GmbH</div><div class="sponsor-entry bronze">Damian Toczek</div><div class="sponsor-entry bronze">Daniel Davison</div><div class="sponsor-entry bronze">David Yeung</div><div class="sponsor-entry bronze">Elevated Sensors</div><div class="sponsor-entry bronze">Ēriks Klaužs</div><div class="sponsor-entry bronze">Flaviu Tamas</div><div class="sponsor-entry bronze">flightmansam</div><div class="sponsor-entry bronze">Genysys Engine ltd</div><div class="sponsor-entry bronze">Glen G</div><div class="sponsor-entry bronze">Hydroexigiantiki SA</div><div class="sponsor-entry bronze">Ian Rees</div><div class="sponsor-entry bronze">James Debono</div><div class="sponsor-entry bronze">James Waples</div><div class="sponsor-entry bronze">Jose Alonso Mendoza</div><div class="sponsor-entry bronze">JR</div><div class="sponsor-entry bronze">Kliment / Future Bits</div><div class="sponsor-entry bronze">Lex Heles</div><div class="sponsor-entry bronze">Lukas Alberts</div><div class="sponsor-entry bronze">MabeeSteve</div><div class="sponsor-entry bronze">Marcos Hernandez</div><div class="sponsor-entry bronze">Mario Zuena</div><div class="sponsor-entry bronze">Marius Grunca</div><div class="sponsor-entry bronze">Markus Vogt</div><div class="sponsor-entry bronze">Matt Valentine</div><div class="sponsor-entry bronze">NateXVI</div><div class="sponsor-entry bronze">nerd-sniped</div><div class="sponsor-entry bronze">P-i-U UG &amp; Co. KG</div><div class="sponsor-entry bronze">P. Smith</div><div class="sponsor-entry bronze">plasmapotential</div><div class="sponsor-entry bronze">Robert</div><div class="sponsor-entry bronze">RobotMachines</div><div class="sponsor-entry bronze">schreinermueller</div><div class="sponsor-entry bronze">Sintesi Labs Design</div><div class="sponsor-entry bronze">Ton Roosendaal</div><div class="sponsor-entry bronze">Un voyageur avec serviette</div><div class="sponsor-entry bronze">Ustun Design</div><div class="sponsor-entry bronze">Vinicius Dupuit</div><div class="sponsor-entry bronze">William Walker</div></div></div><div class="content"><figure>
   <blockquote class="note"><svg
     class="icon note"
     aria-hidden="true"
@@ -604,27 +596,113 @@ document.querySelectorAll('.platform').forEach(link => {
   </svg></a>
 </h3><details open name="faq">
 
-    <summary>Why donate to FreeCAD?</summary><p>Why donate to FreeCAD?</p>
-</details>
+    <summary>Why donate to FreeCAD?</summary>
+
+    <div><p>FreeCAD is run entirely by community members. All donations go to the non-profit <a
+  href="https://fpa.freecad.org/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">FreeCAD Project Association AISBL<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a> (FPA), which are then used for its <a
+  href="https://fpa.freecad.org/programs.html"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Initiatives<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>, including but not limited to:</p>
+<ul>
+<li>Development grants</li>
+<li>Travel grants</li>
+<li>Bug bounty payouts</li>
+<li>Infrastructure</li>
+</ul>
+</div>
+  </details>
 <details open name="faq">
 
-    <summary>How to donate?</summary><p>How to donate?</p>
-</details>
+    <summary>How is the money spent?</summary>
+
+    <div><p>Check out the <a
+  href="https://fpa.freecad.org/handbook/process/bookkeeping/overview.html"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">FPA Bookkeeping<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a> to see how the resources are allocated.</p>
+</div>
+  </details>
+<details open name="faq">
+
+    <summary>How to donate?</summary>
+
+    <div><p>It is possible to commit to monthly donations called <em>sponsorship</em> or make one-time donations using the payment methods provided by the form on the top of this page. Monthly <em>sponsorship</em> grants a sponsor level depending on the amount.</p>
+<p>The FPA accepts donations from individuals and corporations alike. Donations solely aimed at placing companies&rsquo; links on the Donate page are not accepted. Sponsors must have some form of relationship with the FreeCAD project.</p>
+<p>For more details, visit <a
+  href="https://fpa.freecad.org/handbook/process/accepting-donations.html"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">Accepting donations<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>.</p>
+</div>
+  </details>
 <details open name="faq" id="tiers">
 
-    <summary>Sponsorship Tiers</summary><p>Normal Sponsorship info.</p>
-<p>Bronze Sponsorship info.</p>
-<p>Silver Sponsorship info.</p>
-<p>Gold Sponsorship info.</p>
-</details>
-<details open name="faq" id="corporate">
+    <summary>Sponsorship Tiers</summary>
 
-    <summary>Corporate Sponsorship</summary><p>Corporate Sponsorship info.</p>
-</details>
+    <div><table>
+  <thead>
+      <tr>
+          <th>Tier</th>
+          <th>Minimum amount per month</th>
+          <th>Feature</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Normal</strong></td>
+          <td>5 EUR / 5 USD</td>
+          <td>No name listed on this page, but helps the project a lot.</td>
+      </tr>
+      <tr>
+          <td><strong>Bronze</strong> 🥉</td>
+          <td>25 EUR / 25 USD</td>
+          <td>Name or company name listed on this page.</td>
+      </tr>
+      <tr>
+          <td><strong>Silver</strong> 🥈</td>
+          <td>100 EUR / 100 USD</td>
+          <td>Name or company name, link to website, and one-line description listed on this page.</td>
+      </tr>
+      <tr>
+          <td><strong>Gold</strong> 🥇</td>
+          <td>200 EUR / 200 USD</td>
+          <td>Name or company name, logo, link to website and custom description listed on this page.</td>
+      </tr>
+  </tbody>
+</table>
+</div>
+  </details>
 <details open name="faq">
 
-    <summary>Payment options</summary><p>Payment options info.</p>
-</details>
+    <summary>Other ways to support</summary>
+
+    <div><p>As a open and community project, everyone can get involved with FreeCAD: contributions such as bug reports, testing, translations, documentation, development, outreach, and many more are always welcome.</p>
+<p>FreeCAD swag can also be bought via the <a
+  href="https://shop.freecad.org/"
+  class="external-link" target="_blank" rel="external noreferrer nofollow">official shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>. Each purchase contains a small €/$ 2.00 donation to the FPA, with the possibility to increase this amount if desired.</p>
+</div>
+  </details>
 </div></main><footer class="site-footer"><a id="top-link"
   href="#top"
   accesskey="g"
@@ -642,37 +720,25 @@ document.querySelectorAll('.platform').forEach(link => {
             href="/FreeCAD-Website/zh/features/">功能</a><ul></ul></li><li>
           <a
             href="/FreeCAD-Website/zh/download/">下载</a><ul><li>
+                  <a
+                    href="/FreeCAD-Website/zh/releases/">Releases</a>
+                </li><li>
                       <a
-                        href="https://github.com/FreeCAD/FreeCAD/releases" target="_blank" rel="external noreferrer nofollow">Development builds<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
+                        href="/FreeCAD-Website/zh/download/addons/">Addons</a>
                     </li><li>
                       <a
-                        href="https://github.com/FreeCAD/Examples" target="_blank" rel="external noreferrer nofollow">Examples an parts library<svg
-    class="icon external"
-    aria-hidden="true"
-    focusable="false">
-    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
-  </svg></a>
-                    </li><li>
-                      <a
-                        href="/FreeCAD-Website/zh/download/releases/">Releases</a>
+                        href="/FreeCAD-Website/zh/download/unstable/">Unstable</a>
                     </li></ul></li><li>
           <a
             href="/FreeCAD-Website/zh/news/">新闻</a><ul><li>
                   <a
                     href="/FreeCAD-Website/zh/news/archives/">Archives</a>
                 </li><li>
-                        <a href="/FreeCAD-Website/zh/authors/">作者列表</a>
+                        <a href="/FreeCAD-Website/zh/author/">作者</a>
                       </li><li>
-                        <a href="/FreeCAD-Website/zh/categories/">分类列表</a>
+                        <a href="/FreeCAD-Website/zh/category/">分类</a>
                       </li><li>
                         <a href="/FreeCAD-Website/zh/tags/">标签列表</a>
-                      </li><li>
-                        <a href="/FreeCAD-Website/zh/versions/">版本列表</a>
                       </li></ul></li><li>
           <a
             href="/FreeCAD-Website/zh/community/">社区</a><ul><li>
@@ -696,10 +762,20 @@ document.querySelectorAll('.platform').forEach(link => {
   </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/zh/community/fpn/">Professional Network</a>
+                        href="https://shop.freecad.org/" target="_blank" rel="external noreferrer nofollow">Swap shop<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
-                        href="/FreeCAD-Website/zh/community/addons/">Addons</a>
+                        href="https://lens.freecad.org/" target="_blank" rel="external noreferrer nofollow">Lens<svg
+    class="icon external"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/external.svg#external"></use>
+  </svg></a>
                     </li><li>
                       <a
                         href="/FreeCAD-Website/zh/community/telemetry/">Telemetry</a>
@@ -707,7 +783,7 @@ document.querySelectorAll('.platform').forEach(link => {
           <a
             href="/FreeCAD-Website/zh/docs/">文档</a><ul><li>
                   <a
-                    href="https://wiki.freecad.org/User_hub" target="_blank" rel="external noreferrer nofollow">User manual<svg
+                    href="https://wiki.freecad.org/User_hub/zh" target="_blank" rel="external noreferrer nofollow">User manual<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
@@ -761,6 +837,14 @@ document.querySelectorAll('.platform').forEach(link => {
     focusable="false">
     <use href="/FreeCAD-Website/svg/mastodon.svg#mastodon"></use>
   </svg></a><a
+    href="https://bsky.app/profile/freecad.org"
+    title="Bluesky"
+    target="_blank" rel="external noreferrer nofollow"><svg
+    class="icon bluesky"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/bluesky.svg#bluesky"></use>
+  </svg></a><a
     href="https://www.reddit.com/r/freecad"
     title="Reddit"
     target="_blank" rel="external noreferrer nofollow"><svg
@@ -792,6 +876,14 @@ document.querySelectorAll('.platform').forEach(link => {
     aria-hidden="true"
     focusable="false">
     <use href="/FreeCAD-Website/svg/linkedin.svg#linkedin"></use>
+  </svg></a><a
+    href="https://maxwxyz.github.io/FreeCAD-Website/zh/index.xml"
+    type="application/rss&#43;xml"
+    title="RSS feed"><svg
+    class="icon rss"
+    aria-hidden="true"
+    focusable="false">
+    <use href="/FreeCAD-Website/svg/rss.svg#rss"></use>
   </svg></a><a
   href="/FreeCAD-Website/zh/fedishare.html#title=Support&#43;the&#43;FreeCAD&#43;project&amp;description=Donate%20once%20or%20sponsor%20monthly%20to%20make%20FreeCAD%20even%20more%20awesome!&amp;url=https://maxwxyz.github.io/FreeCAD-Website/zh/donate/"
   title="分享至 Fediverse"
@@ -835,9 +927,9 @@ document.querySelectorAll('.platform').forEach(link => {
   </svg></a>
 </span>
 <span>
-    Modified: 2026-06-26
+    Modified: 2026-09-24
   </span><span>
-      Commit: <a href="https://github.com/freecad/website/commit/9002b2ac758487daaf87824ee83fbd9e64d27713">9002b2a<svg
+      Commit: <a href="https://github.com/freecad/website/commit/61f966d3e9456cfb79ec6c108ec6d925ef95c5d5">61f966d3<svg
     class="icon external"
     aria-hidden="true"
     focusable="false">
@@ -856,6 +948,10 @@ document.querySelectorAll('.platform').forEach(link => {
     src="/FreeCAD-Website/js/donate.min.57b37379efb071f2fa82c3b47573857848c5e032b2e6272168938542583bae73.js"
     type="text/javascript"
     defer integrity="sha256-V7Nzee&#43;wcfL6gsO0dXOFeEjF4DKy5ichaJOFQlg7rnM=" crossorigin="anonymous">
+  </script><script
+    src="/FreeCAD-Website/js/zh/redirect_to_thanks.min.e94d898ba9f630c7635461dac075a77311e3dd37e1553515d3fc79025d7ffd61.js"
+    type="text/javascript"
+    defer integrity="sha256-6U2Ji6n2MMdjVGHawHWncxHj3TfhVTUV0/x5Al1//WE=" crossorigin="anonymous">
   </script></body>
 
 </html>
